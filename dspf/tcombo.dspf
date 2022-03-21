@@ -1,0 +1,243 @@
+{
+  "titleTerm": "TESTCOMBO",
+  "fileTerm": "tcombo.dspf",
+  "panel": [
+    {
+      "name": "FCOMBO",
+      "posx": 1,
+      "posy": 1,
+      "height": 42,
+      "width": 132,
+      "cadre": "line1",
+      "title": "TESTCOMBO",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "label",
+          "name": "L02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "Animal:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "vAnimal",
+          "posx": 2,
+          "posy": 9,
+          "reftype": "FPROC",
+          "width": 20,
+          "empty": false,
+          "errmsg": "Nom de l'animal obligatoire",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "Tanimal"
+        }
+      ]
+    },
+    {
+      "name": "TCOMBO2",
+      "posx": 1,
+      "posy": 1,
+      "height": 30,
+      "width": 20,
+      "cadre": "line2",
+      "title": "Test-panel2",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "label",
+          "name": "L02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "Voiture:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "vVoiture",
+          "posx": 3,
+          "posy": 2,
+          "reftype": "FPROC",
+          "width": 15,
+          "empty": false,
+          "errmsg": "Choisissez une voiture",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "Tvoiture"
+        }
+      ]
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "Animal",
+      "panel": "FCOMBO",
+      "form": "combo",
+      "posx": 2,
+      "posy": 9,
+      "nrow": 9,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Animal",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Nom",
+          "long": 20,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "Jaguar",
+            "Noir"
+          ]
+        },
+        {
+          "citem": [
+            "Lion",
+            "Afrique"
+          ]
+        },
+        {
+          "citem": [
+            "Tigre",
+            "Inde"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pays",
+      "panel": "FCOMBO",
+      "form": "combo",
+      "posx": 2,
+      "posy": 9,
+      "nrow": 9,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Payes",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "France"
+          ]
+        },
+        {
+          "citem": [
+            "Coré"
+          ]
+        },
+        {
+          "citem": [
+            "Espagne"
+          ]
+        },
+        {
+          "citem": [
+            "Italie"
+          ]
+        },
+        {
+          "citem": [
+            "USA"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ganimal",
+      "panel": "FCOMBO",
+      "form": "grid",
+      "posx": 17,
+      "posy": 11,
+      "nrow": 11,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Animal",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Pays",
+          "long": 20,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Nombre",
+          "long": 10,
+          "reftyp": "DIGIT",
+          "cellatr": "Green",
+          "edtcar": ""
+        }
+      ],
+      "item": []
+    },
+    {
+      "name": "Tvoiture",
+      "panel": "TCOMBO2",
+      "form": "combo",
+      "posx": 2,
+      "posy": 2,
+      "nrow": 2,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Marque",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "Peugeot"
+          ]
+        }
+      ]
+    }
+  ]
+}

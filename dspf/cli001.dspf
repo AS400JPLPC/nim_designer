@@ -1,0 +1,151 @@
+{
+  "titleTerm": "FICHE CLIENT",
+  "fileTerm": "cli001.dspf",
+  "panel": [
+    {
+      "name": "Fcli00a",
+      "posx": 1,
+      "posy": 1,
+      "height": 32,
+      "width": 132,
+      "cadre": "line1",
+      "title": "Fiche Client",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F9",
+          "txtKey": "F9",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F10",
+          "txtKey": "F10",
+          "ctrl": true,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "Title",
+          "name": "L02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "Fiche Client"
+        },
+        {
+          "defLabel": "label",
+          "name": "L04002",
+          "posx": 4,
+          "posy": 2,
+          "text": "Nom.......:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L06002",
+          "posx": 6,
+          "posy": 2,
+          "text": "Décimal...:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L09002",
+          "posx": 9,
+          "posy": 2,
+          "text": "Proc......:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "cliNom",
+          "posx": 4,
+          "posy": 14,
+          "reftype": "ALPHA_UPPER",
+          "width": 30,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Nom du client",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defNumeric",
+          "name": "decimal",
+          "posx": 6,
+          "posy": 14,
+          "reftype": "DECIMAL",
+          "width": 9,
+          "scal": 2,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "€",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "tproc",
+          "posx": 9,
+          "posy": 14,
+          "reftype": "FPROC",
+          "width": 10,
+          "empty": true,
+          "errmsg": "",
+          "help": "appel procedure",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "myproc"
+        }
+      ]
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "myproc",
+      "panel": "Fcli00a",
+      "form": "combo",
+      "posx": 9,
+      "posy": 14,
+      "nrow": 14,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Pays",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "France"
+          ]
+        },
+        {
+          "citem": [
+            "Espagne"
+          ]
+        },
+        {
+          "citem": [
+            "Italie"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "titleTerm": "GRID                          ",
+  "fileTerm": "Tgrid.dspf",
+  "panel": [
+    {
+      "name": "Tgrid",
+      "posx": 1,
+      "posy": 1,
+      "height": 42,
+      "width": 132,
+      "cadre": "line1",
+      "title": "Test-Grid",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [],
+      "field": []
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "Svoiture",
+      "panel": "Tgrid",
+      "form": "grid",
+      "posx": 2,
+      "posy": 2,
+      "nrow": 2,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Nom",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "color",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Prix",
+          "long": 7,
+          "reftyp": "DECIMAL",
+          "cellatr": "Red",
+          "edtcar": "€"
+        }
+      ],
+      "item": []
+    },
+    {
+      "name": "test",
+      "panel": "Tgrid",
+      "form": "grid",
+      "posx": 17,
+      "posy": 9,
+      "nrow": 9,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "nom",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "prenom",
+          "long": 30,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        }
+      ],
+      "item": []
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Nim-PIE-Debug",
+      "type": "shell",
+      "command": "./.vscode/compile.sh DEBUG PIE  ${fileBasename} ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Nim-PIE-Prod",
+      "type": "shell",
+      "command": "./.vscode/compile.sh PROD PIE ${fileBasename} ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true
+      }
+    },
+      {
+      "label": "Nim_Debug ",
+      "type": "shell",
+      "command": "./.vscode/compile.sh DEBUG ALL ${fileBasename} ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Nim_Prod",
+      "type": "shell",
+      "command": "./.vscode/compile.sh PROD ALL ${fileBasename} ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Nim_Test",
+      "type": "shell",
+      "command": "./.vscode/compile.sh TEST ALL ${fileBasename} ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true,
+      }
+    },
+    {
+      "label": "Cpp_Prod",
+      "type": "shell",
+      "command": "./.vscode/compileCCP.sh PROD PIE ${fileBasename} ${fileBasenameNoExtension}  ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true,
+      }
+    },
+    {
+      "label": "Cpp_Debug",
+      "type": "shell",
+      "command": "./.vscode/compileCCP.sh DEBUG PIE ${fileBasename} ${fileBasenameNoExtension}  ${fileDirname}",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "clear": true,
+      }
+    },
+    {
+      "label": "Glade",
+      "type": "shell",
+      "command": "/usr/bin/glade  ${fileBasename}",
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Conv_Glade",
+      "type": "shell",
+      "command": "./.vscode/ConvGlade.sh  ${fileDirname}  ${fileBasename}",
+      "presentation": {
+        "echo": true,
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Conv_Css",
+      "type": "shell",
+      "command": "./.vscode/ConvCss.sh  ${fileDirname}  ${fileBasename}",
+      "presentation": {
+        "echo": true,
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "GREP-GTK-1",
+      "type": "shell",
+      "command": "/usr/bin/xfce4-terminal --title=GREP --hold --geometry 160x20 --zoom=2 -e ./.vscode/grep_gtk.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": true
+      }
+    },
+    {
+      "label": "GREP-GTK-2",
+      "type": "shell",
+      "command": "/usr/bin/xfce4-terminal --title=GREP --hold --geometry 160x20 --zoom=2 -e ./.vscode/grep_gtk.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": true
+      }
+    },
+    {
+      "label": "Clear cache Nim",
+      "type": "shell",
+      "command": "rm -Rf $HOME/.cache/nim",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": true
+      }
+    },
+    {
+        "label": "Clear VSCodium ",
+        "type": "shell",
+        "command": "./.vscode/clearVsCodium.sh",
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "never",
+          "focus":false,
+          "clear": true
+      }
+    },
+   {
+    "label": "A-GTKVTE",
+    "type": "shell",
+    "command": "$HOME/termvte ${fileDirname}/${fileBasenameNoExtension}",
+    "problemMatcher": [],
+    "presentation": {
+      "echo": true,
+      "reveal": "never",
+      "focus": true
+    }
+   },
+   {
+    "label": "Z-Terminal",
+    "type": "shell",
+    "command": "xfce4-terminal",
+    "problemMatcher": [],
+    "presentation": {
+      "echo": true,
+      "reveal": "never",
+      "focus": true
+    }
+   }
+
+  ]
+}

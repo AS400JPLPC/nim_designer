@@ -1,0 +1,40 @@
+{
+  "titleTerm": "MENU",
+  "fileTerm": "menu.dspf",
+  "panel": [
+    {
+      "name": "menu",
+      "posx": 1,
+      "posy": 1,
+      "height": 30,
+      "width": 132,
+      "cadre": "line1",
+      "title": "menu",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [],
+      "field": []
+    }
+  ],
+  "menu": [
+    {
+      "name": "Menu01",
+      "posx": 2,
+      "posy": 2,
+      "orientation": "vertical",
+      "cadre": "line1",
+      "item": [
+        "Opt01",
+        "Opt02",
+        "exit"
+      ]
+    }
+  ],
+  "sfile": []
+}

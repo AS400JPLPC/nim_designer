@@ -1,0 +1,93 @@
+{
+  "titleTerm": "TEST",
+  "fileTerm": "test.dspf",
+  "panel": [
+    {
+      "name": "test001",
+      "posx": 1,
+      "posy": 1,
+      "height": 42,
+      "width": 132,
+      "cadre": "line1",
+      "title": "testgrid",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [],
+      "field": []
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "nom",
+      "panel": "test001",
+      "form": "grid",
+      "posx": 2,
+      "posy": 2,
+      "nrow": 10,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "name",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "prénom",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        }
+      ],
+      "item": []
+    },
+    {
+      "name": "voiture",
+      "panel": "test001",
+      "form": "combo",
+      "posx": 18,
+      "posy": 13,
+      "nrow": 5,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "marque",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Prix",
+          "long": 8,
+          "reftyp": "DECIMAL",
+          "cellatr": "Yellow",
+          "edtcar": "€"
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "peugeaot",
+            "5000.00"
+          ]
+        },
+        {
+          "citem": [
+            "dacia",
+            "10000.00"
+          ]
+        }
+      ]
+    }
+  ]
+}

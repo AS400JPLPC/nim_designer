@@ -1,0 +1,512 @@
+{
+  "titleTerm": "DESIGNER",
+  "fileTerm": "fieldMenu.dspf",
+  "panel": [
+    {
+      "name": "FORM01",
+      "posx": 1,
+      "posy": 1,
+      "height": 42,
+      "width": 132,
+      "cadre": "line1",
+      "title": "FORM-01",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F9",
+          "txtKey": "F9",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F10",
+          "txtKey": "F10",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F12",
+          "txtKey": "F12",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "Title",
+          "name": "T02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "CONTACT"
+        },
+        {
+          "defLabel": "label",
+          "name": "L04002",
+          "posx": 4,
+          "posy": 2,
+          "text": "Text_Free........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L06002",
+          "posx": 6,
+          "posy": 2,
+          "text": "Alpha............:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L08002",
+          "posx": 8,
+          "posy": 2,
+          "text": "Alpha_Upper......:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L10002",
+          "posx": 10,
+          "posy": 2,
+          "text": "Alpha_Numéric....:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L12002",
+          "posx": 12,
+          "posy": 2,
+          "text": "Alpha_Num.Upper..:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L14002",
+          "posx": 14,
+          "posy": 2,
+          "text": "Text_Full........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L16002",
+          "posx": 16,
+          "posy": 2,
+          "text": "Digit............:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L18002",
+          "posx": 18,
+          "posy": 2,
+          "text": "Digit_Signed.....:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L20002",
+          "posx": 20,
+          "posy": 2,
+          "text": "Décimal..........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L22002",
+          "posx": 22,
+          "posy": 2,
+          "text": "Décimal_Signed...:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L24002",
+          "posx": 24,
+          "posy": 2,
+          "text": "Date_Iso.........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L26002",
+          "posx": 26,
+          "posy": 2,
+          "text": "Date_Fr..........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L28002",
+          "posx": 28,
+          "posy": 2,
+          "text": "Date_Us..........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L30002",
+          "posx": 30,
+          "posy": 2,
+          "text": "Téléphone........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L32002",
+          "posx": 32,
+          "posy": 2,
+          "text": "Mail_Iso.........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L34002",
+          "posx": 34,
+          "posy": 2,
+          "text": "Yes_No...........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L36002",
+          "posx": 36,
+          "posy": 2,
+          "text": "Switch...........:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L38002",
+          "posx": 38,
+          "posy": 2,
+          "text": "Proc.............:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "Vtextfree",
+          "posx": 4,
+          "posy": 21,
+          "reftype": "TEXT_FREE",
+          "width": 10,
+          "empty": false,
+          "errmsg": "Invalide Field requis",
+          "help": "Upercase A-Z",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "Valpha",
+          "posx": 6,
+          "posy": 21,
+          "reftype": "ALPHA",
+          "width": 30,
+          "empty": false,
+          "errmsg": "Requis",
+          "help": "Zone Alpha",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "Vprotect",
+          "posx": 6,
+          "posy": 54,
+          "reftype": "ALPHA",
+          "width": 30,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": true,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "ValphaUper",
+          "posx": 8,
+          "posy": 21,
+          "reftype": "ALPHA_UPPER",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "Valphanum",
+          "posx": 10,
+          "posy": 21,
+          "reftype": "ALPHA_NUMERIC",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "ValphNumUp",
+          "posx": 12,
+          "posy": 21,
+          "reftype": "ALPHA_NUMERIC_UPPER",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "VtextFull",
+          "posx": 14,
+          "posy": 21,
+          "reftype": "TEXT_FULL",
+          "width": 30,
+          "empty": false,
+          "errmsg": "Requis",
+          "help": "Zone Libre",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defNumeric",
+          "name": "Vdigit",
+          "posx": 16,
+          "posy": 21,
+          "reftype": "DIGIT",
+          "width": 10,
+          "scal": 0,
+          "empty": false,
+          "errmsg": "Requis digit(10) ",
+          "help": "Zone digit 0..3",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defNumeric",
+          "name": "VdigitSign",
+          "posx": 18,
+          "posy": 21,
+          "reftype": "DIGIT_SIGNED",
+          "width": 10,
+          "scal": 0,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defNumeric",
+          "name": "Vdecimal",
+          "posx": 20,
+          "posy": 21,
+          "reftype": "DECIMAL",
+          "width": 10,
+          "scal": 2,
+          "empty": false,
+          "errmsg": "Requis decimal(10,2)",
+          "help": "Zone Décimal",
+          "text": "",
+          "EdtCar": "€",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defNumeric",
+          "name": "VdecmlSign",
+          "posx": 22,
+          "posy": 21,
+          "reftype": "DECIMAL_SIGNED",
+          "width": 10,
+          "scal": 2,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defDate",
+          "name": "VdateIso",
+          "posx": 24,
+          "posy": 21,
+          "reftype": "DATE_ISO",
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defDate",
+          "name": "VdateFr",
+          "posx": 26,
+          "posy": 21,
+          "reftype": "DATE_FR",
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defDate",
+          "name": "VdateUs",
+          "posx": 28,
+          "posy": 21,
+          "reftype": "DATE_US",
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defTelephone",
+          "name": "Vtelphone",
+          "posx": 30,
+          "posy": 21,
+          "reftype": "TELEPHONE",
+          "width": 15,
+          "empty": true,
+          "errmsg": "format (033)1234567890",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defMail",
+          "name": "Vmail",
+          "posx": 32,
+          "posy": 21,
+          "reftype": "MAIL_ISO",
+          "width": 100,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "Vyesno",
+          "posx": 34,
+          "posy": 21,
+          "reftype": "YES_NO",
+          "width": 1,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defSwitch",
+          "name": "Vswitch",
+          "posx": 36,
+          "posy": 21,
+          "reftype": "SWITCH",
+          "switch": false,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "Vproc",
+          "posx": 38,
+          "posy": 21,
+          "reftype": "FPROC",
+          "width": 15,
+          "empty": true,
+          "errmsg": "",
+          "help": "Name query table Pays",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "TblPays"
+        }
+      ]
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "Tblpays",
+      "panel": "FORM01",
+      "form": "combo",
+      "posx": 6,
+      "posy": 76,
+      "nrow": 76,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Pays",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Code",
+          "long": 3,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "France",
+            "FRA"
+          ]
+        },
+        {
+          "citem": [
+            "Belgique",
+            "BEL"
+          ]
+        },
+        {
+          "citem": [
+            "Canada",
+            "CAN"
+          ]
+        }
+      ]
+    }
+  ]
+}

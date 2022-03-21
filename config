@@ -1,0 +1,23 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+
+[user]
+	name = AS400JPLPC
+	email = laroche.jeanpierre@gmail.com
+[core]
+	editor = geany
+[merge]
+	tool = filemerge
+[push]
+	default = matching
+[status]
+	showUntrackedFiles = all
+
+[remote "AS400JPLPC"]
+	url = https://github.com/AS400JPLPC/nim_designer
+	fetch = +refs/heads/*:refs/remotes/AS400JPLPC/*
+[pull]
+	rebase = true
