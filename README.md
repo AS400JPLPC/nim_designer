@@ -2,6 +2,11 @@
 
 # Testting 2022-03-21   11h55
 
+# j'ai besoin d'optimiser le grid patience
+
+* change procSDA procJson 2022-03-21 15h40  modification
+
+
 il utilise la bibliothèque Termkey Termcurs  utilise la sourie pour naviguer et selectioner
 
 ![](assets/20220315_030352_ecr01.png)
@@ -203,25 +208,24 @@ ps:
 8. src     -programme terminal ccp
 9. proc...
 
-   | programme | Text                 |
-   | ----------- | ---------------------- |
-   | procCurs  | interne(termcurs)    |
-   | procField  | definition Field      |
-   | procLabel  | definition Label   |
-   | procGrid  | definition Grid/Combo |
-   | procMenu     | definition Menu      |
-   | procPanel  | definition Panel      |
-   | procInit  | ouveture programme SDA      |
-   | callqry  | combo commun      |
-   | procJson  | lecture / écriture JSON      |
-   | procSDA  | proragmme Principal      |
-   | makefile  | outil pour compiler ccp      |
 
+   | programme | Text                     |
+   | ----------- | -------------------------- |
+   | procCurs  | interne(termcurs)        |
+   | procField | definition Field         |
+   | procLabel | definition Label         |
+   | procGrid  | definition Grid/Combo    |
+   | procMenu  | definition Menu          |
+   | procPanel | definition Panel         |
+   | procInit  | ouveture programme SDA   |
+   | callqry   | combo commun             |
+   | procJson  | lecture / écriture JSON |
+   | procSDA   | proragmme Principal      |
+   | makefile  | outil pour compiler ccp  |
 
    VSCODE :
 
    Task Manager extension
-
 
 ```
 import termkey

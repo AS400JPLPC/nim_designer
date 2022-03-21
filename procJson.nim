@@ -287,7 +287,7 @@ proc loadBASE() =
       zsfile.form  = jsonPanel["sfile"][n]["form"].getStr()
       zsfile.posx   = jsonPanel["sfile"][n]["posx"].getInt()
       zsfile.posy   = jsonpanel["sfile"][n]["posy"].getInt()
-      zsfile.nrow   = jsonpanel["sfile"][n]["posy"].getInt()
+      zsfile.nrow   = jsonpanel["sfile"][n]["nrow"].getInt()
       zsfile.sep    = jsonPanel["sfile"][n]["sep"].getStr()
 
       for ncell in  0..len(jsonpanel["sfile"][n]["cell"])-1:

@@ -9,8 +9,8 @@ import tables
 import json
 import os ,times
 
-proc beug(nline : int ; text :string ) =
-  gotoXY(40, 1); echo "ligne>", nline, " :" , text ; discard getFunc()
+#proc beug(nline : int ; text :string ) =
+#  gotoXY(40, 1); echo "ligne>", nline, " :" , text ; discard getFunc()
 
 
 
@@ -587,7 +587,6 @@ while true:
 
               if NSFILE[n].defcell[i].edtcar > "" :
                 nLine.add(fmt"""  setCellEditCar(Cell_{NSFILE[n].defcell[i].text},"{NSFILE[n].defcell[i].edtcar}")""")
-              nLine.add(fmt"")
 
 
             zoneItem = ""
@@ -652,7 +651,6 @@ while true:
 
               if NSFILE[n].defcell[i].edtcar > "" :
                 nLine.add(fmt"""  setCellEditCar(Cell_{NSFILE[n].defcell[i].text},"{NSFILE[n].defcell[i].edtcar}")""")
-              nLine.add(fmt"")
 
 
             zoneItem = ""
