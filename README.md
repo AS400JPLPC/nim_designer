@@ -224,7 +224,7 @@ ps:
 4. creer un dossier placer le programme TermSDA et le programme procSDA dans ce dossier
 5. creer un sous dossier dspf et obj
 6. .vscode -les procedures et envirronement VSCODE
-7. exemple -progrmme nim
+7. exemple -programme nim
 8. src     -programme terminal ccp
 9. proc...
 
@@ -240,7 +240,7 @@ ps:
    | procInit  | ouveture programme SDA   |
    | callqry   | combo commun             |
    | procJson  | lecture / écriture JSON |
-   | procSDA   | proragmme Principal      |
+   | procSDA   | programme Principal      |
    | makefile  | outil pour compiler ccp  |
 
    VSCODE :
