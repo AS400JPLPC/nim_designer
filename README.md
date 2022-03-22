@@ -6,8 +6,27 @@
 
 * change procSDA procJson 2022-03-21 15h40  modification
 
+le projet:
+soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des écrans.
 
-il utilise la bibliothèque Termkey Termcurs  utilise la sourie pour naviguer et selectioner
+cela m'a permis de tester les deux lib. Termkey et Termcurs. Généralement et en particulier la lib Termcurs lui rajouter quelques fonctions.
+
+pourquoi j'ai dupliqué la lib Termcurs en procCurs:
+
+La lib Termcurs est pour des utilisations dans des projets de gestion ou d'outils. je part du principe que l'on utilise une lib mais que l'on ne doit la modifier afin d'avoir une maintenance qui tende vers le point zéro. D'avoir une lib et un code libre qui gère l’interaction écran près à l'emploi permet de s'occuper de la raison pour laquelle on écrit un programme.
+
+la lib procCurs:
+
+je l'ai ouverte car je n'ai pas seulement utilisée,mais j'ai joué avec, car j'avais besoin d'extrapoler et j'avais beaucoup de manipulation anormal ou la donnée et les procédures était intimement lier et les dépendances étaient trop profonde.
+dedans il y a beaucoup de subtilités et cela va même jusqu'à générer du code à la volé (cela aurait pu être fait avec Termcurs)
+l'ouverture m'a permis de soulager et d'avoir accès directement (le soft est lourd plusieurs millier de lignes)
+
+je souhaite que cela permette pour les débutants et plus d'étudier NIM-LANG un language qui n'a rien à envier des autres.
+
+cela permet d'avoir des programmes  léger en terme d'occupation mémoire simple à la lecture et démontre que l'on peut faire beaucoup de chose avec du pure Nim sans apport de lib externe ecrite dans un autre language . assez de blabla regardont de quoi il s'agit.
+
+
+il utilise la bibliothèque Termkey Termcurs  utilise la sourie pour naviguer et selectioner...
 
 ![](assets/20220315_030352_ecr01.png)
 
@@ -70,7 +89,8 @@ paneaux de definition des labels Fields Menus Combo/Grid
 ![](assets/20220315_133712_ecr03_01.png)
 
 pointer la sourie pour positioner l'objet que vous voulez décrire.
-altL -> Label
+
+altL -> Label  CtrlV valide le label
 
 altT -> Titre
 
@@ -226,6 +246,8 @@ ps:
    VSCODE :
 
    Task Manager extension
+
+   exemple de code
 
 ```
 import termkey
