@@ -54,7 +54,7 @@ var ZMENU : seq[Vmenu]
 
 
 
-var pmenu = newPanel("pmenu",1,104,24,26,@[defButton(TKey.F9,"F9 Enrg.",true),defButton(TKey.F12,"Return"),defButton(TKey.CtrlD,""),defButton(TKey.altD,""),defButton(TKey.altS,""),defButton(TKey.CtrlV,"")],line1)
+var pmenu = newPanel("pmenu",1,104,24,26,@[defButton(TKey.F9,"F9 Enrg.",true),defButton(TKey.F12,"Return"),defButton(TKey.CtrlP,""),defButton(TKey.altP,""),defButton(TKey.altS,""),defButton(TKey.CtrlV,"")],line1)
 
 
 pmenu.label.add(defLabel($Lmnun, 2, 4, "Name.:"))

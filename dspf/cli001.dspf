@@ -110,7 +110,20 @@
       ]
     }
   ],
-  "menu": [],
+  "menu": [
+    {
+      "name": "Table",
+      "posx": 10,
+      "posy": 44,
+      "orientation": "vertical",
+      "cadre": "line1",
+      "item": [
+        "Définition",
+        "Visualisation",
+        "Liste"
+      ]
+    }
+  ],
   "sfile": [
     {
       "name": "myproc",

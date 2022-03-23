@@ -13,6 +13,12 @@ type
     tproc
 const P1: array[FIELD_Fcli00a, int] = [0,1,2]
 
+
+# MENU -> TEST
+var Table = new(MENU)
+Table = newMenu("Table", 10, 44, vertical, @["Définition", "Visualisation", "Liste"], line1)
+
+
 # Panel Fcli00a
 
 var Fcli00a= new(PANEL)
@@ -42,7 +48,6 @@ proc myproc(fld : var FIELD) =
   var Cell_pos : int = -1
   var Xcombo  = newGRID("myproc",9,14,14,sepStyle) 
   var Cell_Pays = defCell("Pays",10,TEXT_FREE,"Cyan") 
-
   setHeaders(Xcombo, @[Cell_Pays])
   addRows(Xcombo, @[ "France" ])
   addRows(Xcombo, @[ "Espagne" ])
@@ -76,6 +81,11 @@ proc main() =
   dscFcli00a()
   printPanel(Fcli00a)
   displayPanel(Fcli00a)
+
+  # ONLY -> FOR TEST
+  dspMenuItem(Fcli00a,Table,0)
+  let nTest = ioMenu(Fcli00a,Table,0)
+
 
   #Exemple ------
 
