@@ -1,10 +1,14 @@
 # Designer
 
-# Testting 2022-03-21   11h55
-
-# j'ai besoin d'optimiser le grid patience
+# Testing 2022-03-21   11h55
 
 * change procSDA procJson 2022-03-21 15h40  modification
+* change procMenu 2022-03-23 4h09 Ajustement fonction AltP CrtlP (harmonisation cmd)
+
+* je devrais avoir fini les test ...  
+
+---
+
 
 le projet:
 soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des écrans.
@@ -24,7 +28,6 @@ l'ouverture m'a permis de soulager et d'avoir accès directement (le soft est lo
 je souhaite que cela permette pour les débutants et plus d'étudier NIM-LANG un language qui n'a rien à envier des autres.
 
 cela permet d'avoir des programmes  léger en terme d'occupation mémoire simple à la lecture et démontre que l'on peut faire beaucoup de chose avec du pure Nim sans apport de lib externe ecrite dans un autre language . assez de blabla regardont de quoi il s'agit.
-
 
 il utilise la bibliothèque Termkey Termcurs  utilise la sourie pour naviguer et selectioner...
 
@@ -265,6 +268,12 @@ type
     tproc
 const P1: array[FIELD_Fcli00a, int] = [0,1,2]
 
+
+# MENU -> TEST
+var Table = new(MENU)
+Table = newMenu("Table", 10, 44, vertical, @["Définition", "Visualisation", "Liste"], line1)
+
+
 # Panel Fcli00a
 
 var Fcli00a= new(PANEL)
@@ -294,7 +303,6 @@ proc myproc(fld : var FIELD) =
   var Cell_pos : int = -1
   var Xcombo  = newGRID("myproc",9,14,14,sepStyle)
   var Cell_Pays = defCell("Pays",10,TEXT_FREE,"Cyan")
-
   setHeaders(Xcombo, @[Cell_Pays])
   addRows(Xcombo, @[ "France" ])
   addRows(Xcombo, @[ "Espagne" ])
@@ -323,11 +331,16 @@ callQuery["myproc"] = myproc
 
 
 proc main() =
-  initTerm(32,132) # initTerm() = terminal
+  initTerm(32,132)
 
   dscFcli00a()
   printPanel(Fcli00a)
   displayPanel(Fcli00a)
+
+  # ONLY -> FOR TEST
+  dspMenuItem(Fcli00a,Table,0)
+  let nTest = ioMenu(Fcli00a,Table,0)
+
 
   #Exemple ------
 
@@ -350,4 +363,31 @@ proc main() =
 
 
 main()
+
 ```
+
+Menu:
+
+Ctrl V  validation
+
+Ctrl P  display menu
+
+Alt P   display full menu
+
+Alt S   refresh saisie menu
+
+F9 enregistrement
+
+F12  return
+
+Name : nom du menu
+
+cadre : line1  | line2 ||
+
+Vertical ou Horizontal
+
+![](assets/20220323_035654_ecr04_01.png)
+
+exemple:
+
+![](assets/20220323_040650_ecr04_02.png)
