@@ -4,11 +4,9 @@
 
 * change procSDA procJson 2022-03-21 15h40  modification
 * change procMenu 2022-03-23 4h09 Ajustement fonction AltP CrtlP (harmonisation cmd)
-
-* je devrais avoir fini les test ...  
+* je devrais avoir fini les test ...
 
 ---
-
 
 le projet:
 soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des écrans.
@@ -83,7 +81,7 @@ puis associer le controle par défault des zones comprise dans le panel
 > vous pouvez dans le source affecter à la main d'autre valeur  ex CtrlV
 > leurs donner un text plus explicite ex F9 = F9 Enrg.
 >
-> ex: `defButton(TKey.F9,"F9 Enrg.",true)` `defButton(TKey.CtrlV,"",true)`
+> ex:`defButton(TKey.F3,"F3 Exit.",false)` `defButton(TKey.F9,"F9 Enrg.",true)` `defButton(TKey.CtrlV,"",true)`
 
 ---
 
@@ -152,9 +150,9 @@ Empty-> Vide = on sinon la zone est obligatoire
 
 Error -> message ce rapportant à la zone pour l'utilisateur
 
-Help -> aide avec la touche F1
+Help -> aide avec la touche Ctrl H
 
-Protect -> falg interdisant la sasie ou modification est utile lors de saisie de clef de table
+Protect -> falg interdisant la sasie ou modification est utile lors de saisie de clef de table et modification des zones si rapportant
 
 exemple : Decimal
 
@@ -168,7 +166,9 @@ exemple: combo
 
 Alt G
 
-pensez association zone process et name.combo
+pensez association de la zone process et name.combo
+
+Définition du Combo/Grid
 
 ![](assets/20220320_232730_ecr03_31.png)
 
@@ -192,7 +192,9 @@ Alt P liste colonne
 
 Alt R remove colonne
 
-Alt D dispaly combo/grid
+Alt D display combo/grid
+
+Alt S retour à la Définition du Combo/Grid
 
 Résultat :
 
@@ -219,12 +221,21 @@ dans la directorie du programme TermSDA
 source.nim
 
 que vous pouvez compiler
+
+envirronement de travail
+
+TermSDA et Tsource son des executables des terminaux fait avec C++ GTK
+ex: Tsource vous permez d'excuter Source dans une fenetre terminal
+
+![](assets/20220323_190448_ecr10_01.png)
+
+
 ps:
 
-1. le proc du FCALL n'est pas défini
+1. le proc du FCALL n'est pas defini
 2. la gestion du grid vous est laissé à faire à la main un exemple complet dans exemple
 3. nim c -f --gc:orc -d:useMalloc --passc:-flto --passC:-fno-builtin-memcpy --verbosity:0 --hints:off --threads:on -d:release -o:procSDA procSDA.nim
-4. creer un dossier placer le programme TermSDA et le programme procSDA dans ce dossier
+4. creer un dossier placer le programme TermSDA et le programme procSDA dans ce dossier Idem pour TSource
 5. creer un sous dossier dspf et obj
 6. .vscode -les procedures et envirronement VSCODE
 7. exemple -programme nim
