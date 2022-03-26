@@ -7,6 +7,7 @@ dépendance : **Termkey Termcurs**
 * change procSDA procJson 2022-03-21 15h40  modification
 * change procMenu 2022-03-23 4h09 Ajustement fonction AltP CrtlP (harmonisation cmd)
 * update readme 2022-03-26
+* update procInit  change libellé date
 
 ---
 
