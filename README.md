@@ -11,19 +11,17 @@ dépendance : **Termkey Termcurs**
 ---
 
 le but:
-Soulager l'intendance et la répétition d'écriture de code ,d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
+Soulager la compréhention par la visualisation des Formulaires puis de générerla génération du code.
 
-Cela m'a permis de tester les deux lib. Termkey et Termcurs. Généralement et en particulier la lib Termcurs lui rajouter quelques fonctions.
+Créer des programmes en pure NIM,sans lib externe et occupant peu de place mémoire.
 
-Créer des programmes  légers en termes d’occupation mémoire simple à la lecture en pure NIM sans lib externe.
+l'utilisation de **Termvte** , crée une fenêtre terminale, beaucoup plus souple à gérer que xterm etc...
 
-Pour vraiment profiter utiliser: **Termvte**, cela crée une fenêtre terminale, ouverte beaucoup plus souple que xterm etc... mais peut fonctionner dans un terminal à vous de le paramétrer. Testé avec XFCE
+elle peut fonctionner dans un terminal que vous paramétrez.
 
----
+# utilisation du logiciel:
 
-* [ ] utilisation du logiciel:
-
-ce servir de la sourie pour naviguer et sélectionner, positionner...
+Utiliser la souris pour naviguer, sélectionner, positionner...
 
 ![](assets/20220315_030352_ecr01.png)
 
@@ -39,7 +37,13 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 > F12 abandon
 
+recovery:
+
+![](assets/20220326_125034_ecr01_01.png)
+
 ---
+
+
 
 * [ ] création du panel
 
@@ -58,7 +62,7 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 Name......: Obligatoire, le référencement et le panel sont lier voir exemple dans le source.
 
-PosX,Y....: récupération du positionement de la sourie
+PosX,Y....: récupération du positionement de la souris
 
 Heights...: nombre de lignes verticales
 
@@ -94,7 +98,7 @@ paneaux de définition des labels Fields Menus Combo/Grid
 
 ![](assets/20220315_133712_ecr03_01.png)
 
-pointer la sourie pour positioner l'objet que vous voulez décrire.
+pointer la souris pour positioner l'objet que vous voulez décrire.
 
 altL -> Label  puis tapez votre label CtrlV valide le label
 
