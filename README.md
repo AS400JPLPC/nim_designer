@@ -12,7 +12,7 @@ dépendance : **Termkey Termcurs**
 ---
 
 le but:
-Soulager la compréhention par la visualisation des Formulaires puis de générerla génération du code.
+Soulager la compréhention par la visualisation des Formulaires puis de générer le code.
 
 Créer des programmes en pure NIM,sans lib externe et occupant peu de place mémoire.
 
