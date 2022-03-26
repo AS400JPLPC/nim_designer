@@ -31,18 +31,15 @@ ce servir de la sourie pour naviguer et sélectionner, positionner...
 
 * [ ] New permet de créer un formulaire et de le sauvegarder au format JSON et génère un source.nim
 
+![](assets/20220315_031539_ecr01_02.png)
+
 titleTerm.: Nom étendu du fichier comprenant l'ensemble des panels
 
-"FICHE CLIENT"
-
 fileTerm..: Nom du fichier  (exemple.dspf)
-"cli001"
 
 > F9  enregistre
 
 > F12 abandon
-
-![](assets/20220315_031539_ecr01_02.png)
 
 ---
 
@@ -79,7 +76,6 @@ les touches de fontion F1..F24 appuyer sur la bar d'espacemant pour activé la f
 
 Check Field..:  associer le controle par défault des zones comprise dans le panel
 
-
 > *F3* n'a pas besoin de crontôle ex: = exit programe
 >
 > *F9 F11* on besoin de faire le contrôle car les données ont des conséquences
@@ -108,7 +104,9 @@ altT -> Titre  idem label
 
 altF -> Field
 
-altM -> Menu   altP display de tous les  menus
+altM -> Menu
+
+altP -> display de tous les  menus
 
 altG -> Combo/Grid
 
@@ -146,19 +144,19 @@ vaidation CtrlV
 
 ![](assets/20220315_143608_ecr03_21png)
 
+veuillez valider chaque zone
+
 Name      : nom du buffer
 
 PosX,Y    : défini au moment du clique de la sourie
 
-Ref.Type  : détermibe le mode de sasie
+Ref.Type  : détermine le mode de sasie
 
 ![](assets/20220315_144050_ecr03_22png)
 
 définition attribut
 
 ![](assets/20220315_144139_ecr03_23png)
-
-veuillez faire enter ou tab sur chaque zone
 
 With -> nombre d'entier
 
@@ -173,7 +171,7 @@ Help -> aide avec la touche CtrlH
 Edt.Char -> code par exemple : € $ ¥ ₪ £ %
 
 Protect -> falg interdisant la saisie ou modification.
-Est utile lors de saisie de clef de table et modification des zones si rapportant ex sasie du n° client puis saisie des coordonés du client.
+Est utile lors de saisie de clef de table et modification des zones si rapportant ex: saisie du n° client puis saisie des coordonnés du client.
 
 pour les zones Hiden
 
