@@ -176,11 +176,13 @@ Est utile lors de saisie de clef de table et modification des zones si rapportan
 
 pour les zones Hiden
 
-exemple
-pnlF1.hiden.add(defStringH("zone3",TEXT_FULL, "12101951"))                  # full String n° client
+exemple:
+
+```pnlF1.hiden.add(defStringH("zone3",TEXT_FULL, "12101951"))                  # full String n° client
 pnlF1.hiden.add(defStringH("zone10",DATE_ISO, "2020-04-24"))                # full String
 pnlF1.hiden.add(defSwitchH("zone15", SWITCH,true))                          # specifique switch
 pnlF1.hiden.add(defStringH("zone8",DECIMAL, "256.05"))                      # full String
+```
 
 exemple : Decimal
 
