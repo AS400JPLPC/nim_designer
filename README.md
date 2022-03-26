@@ -37,13 +37,11 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 > F12 abandon
 
-recovery:
+Recovery: Recharge le display file en mémoire. Apporter toutes les modifications jugé nécéssaire.
 
 ![](assets/20220326_125034_ecr01_01.png)
 
 ---
-
-
 
 * [ ] création du panel
 
