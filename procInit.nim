@@ -5,8 +5,8 @@ proc ViewDspf() : string =
   var Xcombo  = newGRID("CELLINIT",1,1,25,sepStyle)
   var g_id    = defCell("ID",3,DIGIT)
   var g_text  = defCell("File",80,TEXT_FREE)
-  var g_last  = defCell("Création",20,TEXT_FREE)
-  var g_upd   = defCell("Update",20,TEXT_FREE)
+  var g_last  = defCell("Update",20,TEXT_FREE)
+  var g_upd   = defCell("Création",20,TEXT_FREE)
   setTerminal()
 
 
