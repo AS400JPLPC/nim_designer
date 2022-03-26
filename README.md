@@ -11,13 +11,11 @@ dépendance : **Termkey Termcurs**
 ---
 
 le but:
-soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
-
-soulager l'intendance et la répétition d'écriture de code ,d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
+Soulager l'intendance et la répétition d'écriture de code ,d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
 
 Cela m'a permis de tester les deux lib. Termkey et Termcurs. Généralement et en particulier la lib Termcurs lui rajouter quelques fonctions.
 
-créer des programmes  légers en termes d’occupation mémoire simple à la lecture en pure NIM sans lib externe.
+Créer des programmes  légers en termes d’occupation mémoire simple à la lecture en pure NIM sans lib externe.
 
 Pour vraiment profiter utiliser: **Termvte**, cela crée une fenêtre terminale, ouverte beaucoup plus souple que xterm etc... mais peut fonctionner dans un terminal à vous de le paramétrer. Testé avec XFCE
 
