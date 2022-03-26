@@ -1,44 +1,38 @@
 # Designer
 
+dépendance : **Termkey Termcurs**
+
 # Testing 2022-03-21   11h55
 
 * change procSDA procJson 2022-03-21 15h40  modification
 * change procMenu 2022-03-23 4h09 Ajustement fonction AltP CrtlP (harmonisation cmd)
-* update readme 2022-03-25
-* je devrais avoir fini les test ... 2022-03-23
+* update readme 2022-03-26
 
 ---
 
-le projet:
-soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des écrans. peu servir de présentation maquette.
+le but:
+soulager l'intendance et la répétion d'écriture de code , d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
 
-cela m'a permis de tester les deux lib. Termkey et Termcurs. Généralement et en particulier la lib Termcurs lui rajouter quelques fonctions.
+soulager l'intendance et la répétition d'écriture de code ,d'avoir tout de suite la visualisation des Formulaires puis de générer le code.
 
-pourquoi j'ai dupliqué la lib Termcurs en procCurs:
+Cela m'a permis de tester les deux lib. Termkey et Termcurs. Généralement et en particulier la lib Termcurs lui rajouter quelques fonctions.
 
-La lib Termcurs est pour des utilisations dans des projets de gestion ou d'outils. Je part du principe que l'on utilise une lib mais que l'on ne doit la modifier afin d'avoir une maintenance qui tende vers le point zéro. D'avoir une lib et un code libre qui gère l’interaction écran près à l'emploi permet de s'occuper de la raison pour laquelle on écrit un programme.
+créer des programmes  légers en termes d’occupation mémoire simple à la lecture en pure NIM sans lib externe.
 
-la lib procCurs:
+Pour vraiment profiter utiliser: **Termvte**, cela crée une fenêtre terminale, ouverte beaucoup plus souple que xterm etc... mais peut fonctionner dans un terminal à vous de le paramétrer. Testé avec XFCE
 
-je l'ai ouverte, je n'ai pas seulement utilisée,mais j'ai joué avec, j'avais besoin d'extrapoler et il y a beaucoup de manipulation anormal ou la donnée et les traitements était intimement lier et les dépendances étaient trop profonde.
-Dedans il y a beaucoup de subtilités et cela va même jusqu'à générer du code à la volé ex: la gestion des ITEM (cela aurait pu être fait avec Termcurs).
+---
 
-Je souhaite que cela permette pour les débutants et plus d'étudier NIM-LANG un language qui n'a rien à envier des autres.
+* [ ] utilisation du logiciel:
 
-creer des programmes  léger en terme d'occupation mémoire simple à la lecture et démontre que l'on peut faire beaucoup de chose avec du pure Nim sans apport de lib externe écrite dans un autre language.
-assez de blabla regardont de quoi il s'agit.
-
-il utilise la bibliothèque **Termkey Termcurs**  ce servir de la sourie pour naviguer et selectioner,positionner ...
-
-pour vraiment profiter utiliser **Termvte** cela creer une fenêtre window (un terminal) ouvert beaucoup plus souple que xterm ect... mais peut fonfionner dans un terminal( à vous de le paramtérer tester avec XFCE)
+ce servir de la sourie pour naviguer et sélectionner, positionner...
 
 ![](assets/20220315_030352_ecr01.png)
 
-* [ ] New permet de creer un formulaire
-
-![](assets/20220315_030810_ecr01_01.png)
+* [ ] New permet de créer un formulaire et de le sauvegarder au format JSON et génère un source.nim
 
 titleTerm.: Nom étendu du fichier comprenant l'ensemble des panels
+
 "FICHE CLIENT"
 
 fileTerm..: Nom du fichier  (exemple.dspf)
@@ -56,26 +50,35 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 ![](assets/20220315_032120_ecr01_03.png)
 
-* [ ] choix : creer = 999 add panel sinon cliquer sur une ligne
+* [ ] choix : créer = "999 add panel" sinon cliquer sur une ligne
 
 ![](assets/20220315_032658_ecr01_04.png)
 
 * [ ] Saisie de la structure du panel
 
-  saisie clavier
-  up / down -- tab / tabs -- enter, pour valider la zone de sasie et passer à la zone suivante
+  fonction saisie clavier:
+  up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
 
 ![](assets/20220315_033532_ecr02_01.png)
 
-Name......: Obligatoire le référencement et le panel sont lier voir source
+Name......: Obligatoire, le référencement et le panel sont lier voir exemple dans le source.
+
+PosX,Y....: récupération du positionement de la sourie
+
+Heights...: nombre de lignes verticales
+
+Width.....: nombre de caractères horizontals
 
 Cadre.....: appuyer sur une touche, le choix apparaît ligne1 = 1 ligne
+
+Title.....: Titre du panel
 
 ![](assets/20220315_033957_ecr02_02.png)
 
 les touches de fontion F1..F24 appuyer sur la bar d'espacemant pour activé la fonction
 
-puis associer le controle par défault des zones comprise dans le panel
+Check Field..:  associer le controle par défault des zones comprise dans le panel
+
 
 > *F3* n'a pas besoin de crontôle ex: = exit programe
 >
@@ -119,7 +122,7 @@ altS -> réaffichage du terminal
 
 CtrlQ -> fermeture du panel retour au menu principal
 
-Ctrl H -> réserver à la saisie pour Help field
+CtrlH -> réserver à la saisie pour Help field
 
 ---
 
@@ -143,7 +146,11 @@ vaidation CtrlV
 
 ![](assets/20220315_143608_ecr03_21png)
 
-definition de zone Nom
+Name      : nom du buffer
+
+PosX,Y    : défini au moment du clique de la sourie
+
+Ref.Type  : détermibe le mode de sasie
 
 ![](assets/20220315_144050_ecr03_22png)
 
@@ -161,9 +168,12 @@ Empty-> Vide = on sinon la zone est obligatoire
 
 Error -> message ce rapportant à la zone pour l'utilisateur
 
-Help -> aide avec la touche Ctrl H
+Help -> aide avec la touche CtrlH
 
-Protect -> falg interdisant la saisie ou modification, est utile lors de saisie de clef de table et modification des zones si rapportant
+Edt.Char -> code par exemple : € $ ¥ ₪ £ %
+
+Protect -> falg interdisant la saisie ou modification.
+Est utile lors de saisie de clef de table et modification des zones si rapportant ex sasie du n° client puis saisie des coordonés du client.
 
 pour les zones Hiden
 
@@ -172,47 +182,46 @@ pnlF1.hiden.add(defStringH("zone3",TEXT_FULL, "12101951"))                  # fu
 pnlF1.hiden.add(defStringH("zone10",DATE_ISO, "2020-04-24"))                # full String
 pnlF1.hiden.add(defSwitchH("zone15", SWITCH,true))                          # specifique switch
 pnlF1.hiden.add(defStringH("zone8",DECIMAL, "256.05"))                      # full String
+
 exemple : Decimal
 
 ![](assets/20220320_214852_ecr03_25.png)
 
 exemple : appel process
+appel automatiquement la procédure ex: un combo ou calcul avec retour de donnés...
 
 ![](assets/20220320_215300_ecr03_26.png)
 
-exemple: combo
-
-Alt G
-
-pensez association de la zone process et name.combo
-
 * [ ] Définition du Combo/Grid
+  AltG
+
+pensez à l'association de la zone process et name.combo
 
 ![](assets/20220320_232730_ecr03_31.png)
 
 * [ ] Définiton des titres des  colonnes
 
-Alt C
+AltC
 
 ![](assets/20220320_221032_ecr03_32.png)
 
 * [ ] enregistrement data pour les colonnes
 
-Alt I   Item
+AltI   Item
 
 ![](assets/20220320_221222_ecr03_33.png)
 
-Alt C entete
+AltC entete
 
-Alt I Item uniquement combo
+AltI Item uniquement combo
 
-Alt P liste colonne
+AltP liste colonne
 
-Alt R remove colonne
+AltR remove colonne
 
-Alt D display combo/grid
+AltD display combo/grid
 
-Alt S retour à la Définition du Combo/Grid
+AltS retour à la Définition du Combo/Grid
 
 Résultat :
 
@@ -220,9 +229,37 @@ Résultat :
 
 Idem pour le Grid sans les items
 
-pour sauvegarder le combo/grid  Ctrl V
+pour sauvegarder le combo/grid  CtrlV
 
-pour quitter l'envirronement de définition combo/grid Alt Q
+pour quitter l'envirronement de définition combo/grid AltQ
+
+---
+
+* [ ] Menu:
+
+CtrlV  validation
+
+CtrlP  display menu
+
+AltP   display full menu
+
+AltS   refresh saisie menu
+
+> F9 enregistrement
+
+> F12 return
+
+Name : nom du menu
+
+cadre : line1  | line2 ||
+
+Vertical ou Horizontal
+
+![](assets/20220323_035654_ecr04_01.png)
+
+exemple:
+
+![](assets/20220323_040650_ecr04_02.png)
 
 ---
 
@@ -234,9 +271,7 @@ dans la sous directorie ./dspf
 
 name.dspf fichier json
 
-dans la directorie du programme TermSDA
-
-source.nim que vous pouvez compiler
+dans la directorie du programme TermSDA le source.nim que vous pouvez compiler
 
 ---
 
@@ -249,36 +284,38 @@ ex: Tsource vous permez d'excuter Source dans une fenêtre terminal
 
 ps:
 
-1. le proc du FCALL n'est pas defini
+1. le proc faisant appel à la fonction  FCALL  n'est pas defini
 2. la gestion du grid vous est laissé à faire à la main un exemple complet dans exemple
 3. nim c -f --gc:orc -d:useMalloc --passc:-flto --passC:-fno-builtin-memcpy --verbosity:0 --hints:off --threads:on -d:release -o:procSDA procSDA.nim
 4. creer un dossier placer le programme TermSDA et le programme procSDA dans ce dossier Idem pour TSource
 5. creer un sous dossier dspf et obj->(pour compiler TermSDA.ccp fenêtre window)
-6. .vscode -les procedures et envirronement VSCODE
-7. exemple -programme nim
-8. src     -programme terminal ccp
-9. proc...
+6. les dossiers:
+   .vscode -les procedures et envirronement VSCODE
+   exemple -programme nim
+   src     -programme terminal ccp
+   proc...
 
 
-   | programme | Text                     |
-   | ----------- | -------------------------- |
-   | procCurs  | interne(termcurs)        |
-   | procField | definition Field         |
-   | procLabel | definition Label         |
-   | procGrid  | definition Grid/Combo    |
-   | procMenu  | definition Menu          |
-   | procPanel | definition Panel         |
-   | procInit  | ouveture programme SDA   |
-   | callqry   | combo commun             |
-   | procJson  | lecture / écriture JSON |
-   | procSDA   | programme Principal      |
-   | makefile  | outil pour compiler ccp  |
+| programme | Text                     |
+| ----------- | -------------------------- |
+| procCurs  | interne(termcurs)        |
+| procField | definition Field         |
+| procLabel | definition Label         |
+| procGrid  | definition Grid/Combo    |
+| procMenu  | definition Menu          |
+| procPanel | definition Panel         |
+| procInit  | ouveture programme SDA   |
+| callqry   | combo commun             |
+| procJson  | lecture / écriture JSON |
+| procSDA   | programme Principal      |
+| makefile  | outil pour compiler ccp  |
 
-   VSCODE :
+VSCODE :
 
-   **Task Manager** extension
+**Task Manager** extension
+--------------------------
 
-   exemple de code
+exemple source généré:
 
 ```
 import termkey
@@ -393,29 +430,3 @@ proc main() =
 main()
 
 ```
-
-* [ ] Menu:
-
-Ctrl V  validation
-
-Ctrl P  display menu
-
-Alt P   display full menu
-
-Alt S   refresh saisie menu
-
-F9 enregistrement
-
-F12  return
-
-Name : nom du menu
-
-cadre : line1  | line2 ||
-
-Vertical ou Horizontal
-
-![](assets/20220323_035654_ecr04_01.png)
-
-exemple:
-
-![](assets/20220323_040650_ecr04_02.png)
