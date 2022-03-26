@@ -37,7 +37,7 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 > F12 abandon
 
-Recovery: Recharge le display file en mémoire. Apporter toutes les modifications jugé nécéssaire.
+Recovery: Recharge le display file en mémoire. Apporter toutes les modifications jugés nécéssaires.
 
 ![](assets/20220326_125034_ecr01_01.png)
 
