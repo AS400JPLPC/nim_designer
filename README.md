@@ -40,7 +40,7 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 Recovery: Recharge le display file en mémoire. Apporter toutes les modifications jugées nécéssaires.
 
-![](assets/20220326_125034_ecr01_01.png)
+![](assets/20220315_031510_ecr01_01.png)
 
 ---
 
