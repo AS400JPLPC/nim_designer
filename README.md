@@ -25,7 +25,13 @@ elle peut fonctionner dans un terminal que vous paramétrez.
 
 # vidéo
 
-img : [EXEMPLE](https://github.com/AS400JPLPC/nim_designer/blob/master/video/ecr001.mp4}.
+img : [ECR001](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr001.mp4}.
+
+img : [ECR002](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr002.mp4}.
+
+img : [ECR003](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr003.mp4}.
+
+
 Utiliser la souris pour naviguer, sélectionner, positionner...
 
 ![](assets/20220315_030352_ecr01.png)
