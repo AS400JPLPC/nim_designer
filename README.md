@@ -8,6 +8,7 @@ dépendance : **Termkey Termcurs**
 * change procMenu 2022-03-23 4h09 fonction AltP CrtlP (harmonisation cmd)
 * update procInit 2022-03-26 change libellé date
 * update reademe 2022-03-27
+* update procSDA 2022-03-08 display label... posX = 1
 
 ---
 
@@ -22,6 +23,9 @@ elle peut fonctionner dans un terminal que vous paramétrez.
 
 # utilisation du logiciel:
 
+# vidéo
+
+img : [EXEMPLE](https://github.com/AS400JPLPC/nim_designer/blob/master/video/ecr001.mp4}.
 Utiliser la souris pour naviguer, sélectionner, positionner...
 
 ![](assets/20220315_030352_ecr01.png)
@@ -54,14 +58,12 @@ Recharge le display file en mémoire. Apporter toutes les modifications jugées 
 
 ![](assets/20220315_032658_ecr01_04.png)
 
-
 # Saisie de la structure du panel
 
 fonction saisie clavier:
 up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
 
 si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
-
 
 ![](assets/20220315_033532_ecr02_01.png)
 

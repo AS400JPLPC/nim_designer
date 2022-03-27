@@ -326,7 +326,7 @@ while true:
               onCursor()
               continue
             of 1 :
-              Zgrid = newGrid("GRID01",30,1,5)
+              Zgrid = newGrid("GRID01",1,1,5)
               var Cell_idl      = defCell("ID",3,DIGIT)
               var Cell_namel    = defCell("Name",10,ALPHA,cellYellow)
               var Cell_posxl    = defCell("PosX",4,DIGIT)
@@ -338,7 +338,7 @@ while true:
               for n in 0..len(base[PanelWork].label)-1:
                 addRows(Zgrid, @[setID(Cell_numIDx), getNameL(base[PanelWork],n), $getPosxL(base[PanelWork],n),$getPosyL(base[PanelWork],n),getTextL(base[PanelWork],n),$isTitle(base[PanelWork],n)])
             of 2:
-              Zgrid  = newGrid("GRID01",30,2,5)
+              Zgrid  = newGrid("GRID01",1,2,5)
               var Cell_idf      = defCell("ID",3,DIGIT)
               var Cell_namef    = defCell("Name",10,ALPHA,cellYellow)
               var Cell_posxf    = defCell("PosX",4,DIGIT)
@@ -350,7 +350,7 @@ while true:
                 addRows(Zgrid, @[setID(Cell_numIDx), getName(base[PanelWork],n), $getPosx(base[PanelWork],n),$getPosyL(base[PanelWork],n),$getRefType(base[PanelWork],n)])
 
             of 3:
-              Zgrid  = newGrid("GRID01",30,2,5)
+              Zgrid  = newGrid("GRID01",1,2,5)
               var Cell_idm      = defCell("ID",3,DIGIT)
               var Cell_namem    = defCell("Name",10,ALPHA,cellYellow)
               var Cell_posxm    = defCell("PosX",4,DIGIT)
