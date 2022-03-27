@@ -12,7 +12,7 @@ dépendance : **Termkey Termcurs**
 
 ---
 
-le but:
+# but:
 Soulager la compréhention par la visualisation des Formulaires puis de générer le code.
 
 Créer des programmes en pure NIM,sans lib externe et occupant peu de place mémoire.
@@ -21,15 +21,10 @@ l'utilisation de **Termvte** , crée une fenêtre terminale, beaucoup plus soupl
 
 elle peut fonctionner dans un terminal que vous paramétrez.
 
-# utilisation du logiciel:
-
 # vidéo
+tutoreil vidéo
 
-img : [ECR001](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr001.mp4}.
-
-img : [ECR002](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr002.mp4}.
-
-img : [ECR003](https://github.com/AS400JPLPC/nim_designer/tree/master/video/ecr003.mp4}.
+# utilisation du logiciel:
 
 
 Utiliser la souris pour naviguer, sélectionner, positionner...
