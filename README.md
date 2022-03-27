@@ -68,7 +68,7 @@ Recovery: Recharge le display file en mémoire. Apporter toutes les modification
 | PosX,Y      | récupération du positionement de la souris                                      |
 | Heights     | nombre de lignes verticales                                                       |
 | Width       | nombre de caractères horizontals                                                 |
-| Cadre       | appuyer sur une touche, le choix apparaît ligne = 1 ligne                        |
+| Cadre       | appuyer sur une touche, le choix apparaît ---- combo: ligne = 1 ligne =2         |
 | Title       | Titre du panel                                                                    |
 | F1..F24     | appuyer sur la bar d'espacemant pour activé la fonction                          |
 | Check Field | associer le controle par défault des zones comprise dans le panel                |
@@ -143,7 +143,7 @@ choix ajouter ou modifier
 | ---------- | --------------------------------------------- |
 | Name     | nom du buffer                               |
 | PosX,Y   | défini au moment du clique de la souris    |
-| Ref.Type | détermine le mode de sasie                 |
+| Ref.Type | combo: détermine le mode de sasie          |
 | With     | nombre d'entier                             |
 | Scal     | Nombre de décimal après la virgule        |
 | Empty    | on -> Vide   off -> la zone est obligatoire |
@@ -182,7 +182,7 @@ appel automatiquement la procédure ex: un combo ou calcul avec retour de donné
 | Name       | nom du process                           |
 | PosX,Y     | défini au moment du clique de la souris |
 | Rows       | Nombre de ligne horizontale              |
-| Separateur | sepStyle noStyle                         |
+| Separateur | combo: sepStyle noStyle                  |
 
 pensez à l'association de la zone process et name.combo
 
@@ -196,7 +196,8 @@ pensez à l'association de la zone process et name.combo
 | text   | titre de la colonne                      |
 | long   | nombre de caractères                    |
 | PosX,Y | défini au moment du clique de la souris |
-| Type   | TEXT_FREE DIGIT ....                     |
+| Type   | combo TEXT_FREE DIGIT ....               |
+| Color  | combo color                              |
 | Car    | code par exemple : € $ ¥ ₪ £ %       |
 
 ![](assets/20220320_221032_ecr03_32.png)
@@ -245,8 +246,8 @@ Résultat :
 | Name   | nom du menu                              |
 | PosX,Y | défini au moment du clique de la souris |
 | ....   | Item                                     |
-| cadre  | 1 ligne  2 lignes                        |
-| ....   | Vertical ou Horizontal                   |
+| cadre  | combo: 1 ligne  2 lignes                 |
+| ....   | combo: Vertical ou Horizontal            |
 
 ![](assets/20220323_035654_ecr04_01.png)
 
