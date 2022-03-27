@@ -57,6 +57,8 @@ Recovery: Recharge le display file en mémoire. Apporter toutes les modification
   fonction saisie clavier:
   up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
 
+  si il y a une erreur de saisie appuyez sur la touche "Escape"
+
 ![](assets/20220315_033532_ecr02_01.png)
 
 Name......: Obligatoire, le référencement et le panel sont lier voir exemple dans le source.
