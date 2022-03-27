@@ -26,7 +26,7 @@ Utiliser la souris pour naviguer, sélectionner, positionner...
 
 ![](assets/20220315_030352_ecr01.png)
 
-* [ ] New permet de créer un formulaire et de le sauvegarder au format JSON et génère un source.nim
+# New permet de créer un formulaire
 
 ![](assets/20220315_031539_ecr01_02.png)
 
@@ -38,26 +38,30 @@ fileTerm..: Nom du fichier  (exemple.dspf)
 
 > F12 abandon
 
-Recovery: Recharge le display file en mémoire. Apporter toutes les modifications jugées nécéssaires.
+# Recovery
+
+Recharge le display file en mémoire. Apporter toutes les modifications jugées nécéssaires.
 
 ![](assets/20220315_031510_ecr01_01.png)
 
 ---
 
-* [ ] création du panel
+# création du panel
 
 ![](assets/20220315_032120_ecr01_03.png)
 
-* [ ] choix : créer = "999 add panel" sinon cliquer sur une ligne
+* [X] choix : créer = "999 add panel" sinon cliquer sur une ligne
 
 ![](assets/20220315_032658_ecr01_04.png)
 
-* [ ] Saisie de la structure du panel
 
-  fonction saisie clavier:
-  up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
+# Saisie de la structure du panel
 
-  si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
+fonction saisie clavier:
+up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
+
+si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
+
 
 ![](assets/20220315_033532_ecr02_01.png)
 
@@ -91,7 +95,7 @@ Recovery: Recharge le display file en mémoire. Apporter toutes les modification
 
 ---
 
-paneaux de définition des labels Fields Menus Combo/Grid
+# paneaux de définition des labels Fields Menus Combo/Grid
 
 ![](assets/20220315_133712_ecr03_01.png)
 
@@ -116,21 +120,21 @@ pointer la souris pour positioner l'objet que vous voulez décrire.
 
 ---
 
-* [ ] AltT -> Titre
+# AltT -> Titre
 
 ![](assets/20220315_135205_ecr03_11.png)
 
-* [ ] CtrlV -> vaidation
+# CtrlV -> validation
 
 ![](assets/20220315_135328_ecr03_12.png)
 
-* [ ] AltL -> Label Idem Titre ex nom....:
+# AltL -> Label Idem Titre ex nom....:
 
 ![](assets/20220315_143234_ecr03_13.png)
 
 ---
 
-* [ ] AltF -> définition FIELD
+# AltF -> définition FIELD
 
 choix ajouter ou modifier
 
@@ -156,7 +160,7 @@ choix ajouter ou modifier
 
 ![](assets/20220315_144139_ecr03_23png)
 
-* [ ] les zones Hiden
+# Field Hiden
 
 ```pnlF1.hiden.add(defStringH("zone3",TEXT_FULL, "12101951"))                  # full String n° client
 pnlF1.hiden.add(defStringH("zone10",DATE_ISO, "2020-04-24"))                # full String
@@ -173,7 +177,7 @@ appel automatiquement la procédure ex: un combo ou calcul avec retour de donné
 
 ![](assets/20220320_215300_ecr03_26.png)
 
-* [ ] AltG - > Définition du Combo/Grid
+# AltG - > Définition du Combo/Grid
 
 
 | field      | fonction                                 |
@@ -188,7 +192,7 @@ pensez à l'association de la zone process et name.combo
 
 ![](assets/20220320_232730_ecr03_31.png)
 
-* [ ] AltC -> Définiton des titres des  colonnes
+# AltC -> Définiton des titres des  colonnes
 
 
 | field  | fonction                                 |
@@ -202,7 +206,7 @@ pensez à l'association de la zone process et name.combo
 
 ![](assets/20220320_221032_ecr03_32.png)
 
-* [ ] AltI-> Item
+# AltI-> Item
 
 enregistrement data des colonnes
 
@@ -226,7 +230,7 @@ Résultat :
 
 ---
 
-* [ ] AltM -> Menu:
+# AltM -> Menu:
 
 
 | key   | Fonction            |
@@ -257,13 +261,13 @@ exemple:
 
 ---
 
-* [ ] sauvegarde:
+# sauvegarde:
 
 ![](assets/20220320_233406_ecr03_50png)
 
 dans la sous directorie ./dspf
 
-"name.dspf" fichier json
+"name.dspf" Génère un fichier json
 
 dans la directorie du programme TermSDA  "Source.nim" que vous pouvez compiler
 
@@ -276,7 +280,7 @@ ex: Tsource vous permez d'excuter Source dans une fenêtre terminal
 
 ![](assets/20220323_190448_ecr10_01.png)
 
-ps:
+Particularité:
 
 1. le proc faisant appel à la fonction  FCALL  n'est pas defini
 2. la gestion du grid vous est laissé à faire à la main un exemple complet dans exemple
