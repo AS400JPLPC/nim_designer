@@ -5,9 +5,9 @@ dépendance : **Termkey Termcurs**
 # Testing 2022-03-21   11h55
 
 * change procSDA procJson 2022-03-21 15h40  modification
-* change procMenu 2022-03-23 4h09 Ajustement fonction AltP CrtlP (harmonisation cmd)
-* update readme 2022-03-26
+* change procMenu 2022-03-23 4h09 fonction AltP CrtlP (harmonisation cmd)
 * update procInit 2022-03-26 change libellé date
+* update reademe 2022-03-27
 
 ---
 
@@ -57,7 +57,7 @@ Recovery: Recharge le display file en mémoire. Apporter toutes les modification
   fonction saisie clavier:
   up / down -- tab / tabs -- enter, pour valider la zone de saisie et passer à la zone suivante.
 
-  si il y a une erreur de saisie appuyez sur la touche "Escape"
+  si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 
 ![](assets/20220315_033532_ecr02_01.png)
 
@@ -101,53 +101,47 @@ paneaux de définition des labels Fields Menus Combo/Grid
 
 pointer la souris pour positioner l'objet que vous voulez décrire.
 
-altL -> Label  puis tapez votre label CtrlV valide le label
 
-altT -> Titre  idem label
-
-altF -> Field
-
-altM -> Menu
-
-altP -> display de tous les  menus
-
-altG -> Combo/Grid
-
-altD -> affichage des objet Label Field Menu
-
-altO -> réordonner les objet Label Field
-
-altR -> remove les objet Label Field Menu Combo/Grid
-
-altS -> réaffichage du terminal
-
-CtrlQ -> fermeture du panel retour au menu principal
-
-CtrlH -> réserver à la saisie pour Help field
+| key   | Fonction                                            |
+| ------- | ----------------------------------------------------- |
+| AltL  | Label  puis tapez votre label CtrlV valide le label |
+| AltT  | Titre  idem label                                   |
+| AltF  | Field                                               |
+| AltM  | Menu                                                |
+| AltP  | display de tous les  menus                          |
+| AltG  | Combo/Grid                                          |
+| AltD  | affichage des objet Label Field Menu                |
+| AltO  | réordonner les objet Label Field                   |
+| AltR  | remove les objet Label Field Menu Combo/Grid        |
+| AltS  | réaffichage du terminal                            |
+| CtrlQ | fermeture du panel retour au menu principal         |
+|       |                                                     |
+| CtrlH | réserver à la saisie pour Help field              |
 
 ---
 
-* [ ] titre
+* [ ] AltT -> Titre
 
 ![](assets/20220315_135205_ecr03_11.png)
 
-vaidation CtrlV
+CtrlV -> vaidation
 
 ![](assets/20220315_135328_ecr03_12.png)
 
-* [ ] label Idem ex nom....:
+* [ ] AltL -> Label Idem Titre ex nom....:
 
 ![](assets/20220315_143234_ecr03_13.png)
 
 ---
 
-* [ ] définition FIELD
-  Field altF
-  choix ajouter ou modifier
+* [ ] AltF -> définition FIELD
+
+choix ajouter ou modifier
 
 ![](assets/20220315_143608_ecr03_21png)
 
-veuillez valider chaque zone
+*veuillez valider chaque zone*
+
 
 Name      : nom du buffer
 
@@ -161,15 +155,15 @@ définition attribut
 
 ![](assets/20220315_144139_ecr03_23png)
 
-With -> nombre d'entier
+With  -> nombre d'entier
 
-Scal -> Nombre de décimal après la virgule
+Scal  -> Nombre de décimal après la virgule
 
-Empty-> Vide = on sinon la zone est obligatoire
+Empty -> Vide = on sinon la zone est obligatoire
 
 Error -> message ce rapportant à la zone pour l'utilisateur
 
-Help -> aide avec la touche CtrlH
+Help  -> aide avec la touche CtrlH
 
 Edt.Char -> code par exemple : € $ ¥ ₪ £ %
 
@@ -195,36 +189,33 @@ appel automatiquement la procédure ex: un combo ou calcul avec retour de donné
 
 ![](assets/20220320_215300_ecr03_26.png)
 
-* [ ] Définition du Combo/Grid
-  AltG
+* [ ] AltG - > Définition du Combo/Grid
 
 pensez à l'association de la zone process et name.combo
 
 ![](assets/20220320_232730_ecr03_31.png)
 
-* [ ] Définiton des titres des  colonnes
-
-AltC
+* [ ] AltC -> Définiton des titres des  colonnes
 
 ![](assets/20220320_221032_ecr03_32.png)
 
-* [ ] enregistrement data pour les colonnes
+* [ ] AltI-> Item
 
-AltI-> Item
+enregistrement data des colonnes
 
 ![](assets/20220320_221222_ecr03_33.png)
 
-AltC-> entete
 
-AltI-> Item uniquement combo
-
-AltP-> liste colonne
-
-AltR-> remove colonne
-
-AltD-> display combo/grid
-
-AltS-> retour à la Définition du Combo/Grid
+| key   | Fonction                                          |
+| ------- | --------------------------------------------------- |
+| AltC  | Header Colonne                                    |
+| AltI  | Item uniquement combo                             |
+| AltP  | liste colonne                                     |
+| AltR  | remove colonne                                    |
+| AltD  | display combo/grid                                |
+| AltS  | recharge à la Définition du Combo/Grid          |
+| CtrlV | sauvegarde le combo/grid                          |
+| AltQ  | quitter l'envirronement de définition combo/grid |
 
 Résultat :
 
@@ -232,21 +223,17 @@ Résultat :
 
 Idem pour le Grid sans les items
 
-pour sauvegarder le combo/grid  CtrlV
-
-pour quitter l'envirronement de définition combo/grid AltQ
-
 ---
 
-* [ ] Menu:
+* [ ] AltM -> Menu:
 
-CtrlV-> validation
 
-CtrlP-> display menu
-
-AltP->  display full menu
-
-AltS -> refresh saisie menu
+| key   | Fonction            |
+| ------- | --------------------- |
+| CtrlV | validation          |
+| CtrlP | display menu        |
+| AltP  | display full menu   |
+| AltS  | refresh saisie menu |
 
 > F9 enregistrement
 
@@ -272,9 +259,9 @@ exemple:
 
 dans la sous directorie ./dspf
 
-name.dspf fichier json
+"name.dspf" fichier json
 
-dans la directorie du programme TermSDA le source.nim que vous pouvez compiler
+dans la directorie du programme TermSDA  "Source.nim" que vous pouvez compiler
 
 ---
 
