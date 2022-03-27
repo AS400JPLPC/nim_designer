@@ -69,7 +69,7 @@ Heights...: nombre de lignes verticales
 
 Width.....: nombre de caractères horizontals
 
-Cadre.....: appuyer sur une touche, le choix apparaît ligne1 = 1 ligne
+Cadre.....: appuyer sur une touche, le choix apparaît ligne = 1 ligne |  line2 || or line0
 
 Title.....: Titre du panel
 
@@ -210,21 +210,21 @@ AltC
 
 * [ ] enregistrement data pour les colonnes
 
-AltI   Item
+AltI-> Item
 
 ![](assets/20220320_221222_ecr03_33.png)
 
-AltC entete
+AltC-> entete
 
-AltI Item uniquement combo
+AltI-> Item uniquement combo
 
-AltP liste colonne
+AltP-> liste colonne
 
-AltR remove colonne
+AltR-> remove colonne
 
-AltD display combo/grid
+AltD-> display combo/grid
 
-AltS retour à la Définition du Combo/Grid
+AltS-> retour à la Définition du Combo/Grid
 
 Résultat :
 
@@ -240,13 +240,13 @@ pour quitter l'envirronement de définition combo/grid AltQ
 
 * [ ] Menu:
 
-CtrlV  validation
+CtrlV-> validation
 
-CtrlP  display menu
+CtrlP-> display menu
 
-AltP   display full menu
+AltP->  display full menu
 
-AltS   refresh saisie menu
+AltS -> refresh saisie menu
 
 > F9 enregistrement
 
@@ -256,7 +256,7 @@ Name : nom du menu
 
 cadre : line1  | line2 ||
 
-Vertical ou Horizontal
+menu -> Vertical ou Horizontal
 
 ![](assets/20220323_035654_ecr04_01.png)
 
