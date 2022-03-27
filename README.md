@@ -61,23 +61,19 @@ Recovery: Recharge le display file en mémoire. Apporter toutes les modification
 
 ![](assets/20220315_033532_ecr02_01.png)
 
-Name......: Obligatoire, le référencement et le panel sont lier voir exemple dans le source.
 
-PosX,Y....: récupération du positionement de la souris
-
-Heights...: nombre de lignes verticales
-
-Width.....: nombre de caractères horizontals
-
-Cadre.....: appuyer sur une touche, le choix apparaît ligne = 1 ligne |  line2 || or line0
-
-Title.....: Titre du panel
+| field       | fonction                                                                          |
+| ------------- | ----------------------------------------------------------------------------------- |
+| Name        | Obligatoire, le référencement et le panel sont lier voir exemple dans le source |
+| PosX,Y      | récupération du positionement de la souris                                      |
+| Heights     | nombre de lignes verticales                                                       |
+| Width       | nombre de caractères horizontals                                                 |
+| Cadre       | appuyer sur une touche, le choix apparaît ligne = 1 ligne                        |
+| Title       | Titre du panel                                                                    |
+| F1..F24     | appuyer sur la bar d'espacemant pour activé la fonction                          |
+| Check Field | associer le controle par défault des zones comprise dans le panel                |
 
 ![](assets/20220315_033957_ecr02_02.png)
-
-les touches de fontion F1..F24 appuyer sur la bar d'espacemant pour activé la fonction
-
-Check Field..:  associer le controle par défault des zones comprise dans le panel
 
 > *F3* n'a pas besoin de crontôle ex: = exit programe
 >
@@ -124,7 +120,7 @@ pointer la souris pour positioner l'objet que vous voulez décrire.
 
 ![](assets/20220315_135205_ecr03_11.png)
 
-CtrlV -> vaidation
+* [ ] CtrlV -> vaidation
 
 ![](assets/20220315_135328_ecr03_12.png)
 
@@ -143,36 +139,24 @@ choix ajouter ou modifier
 *veuillez valider chaque zone*
 
 
-Name      : nom du buffer
-
-PosX,Y    : défini au moment du clique de la sourie
-
-Ref.Type  : détermine le mode de sasie
+| field    | fonction                                    |
+| ---------- | --------------------------------------------- |
+| Name     | nom du buffer                               |
+| PosX,Y   | défini au moment du clique de la souris    |
+| Ref.Type | détermine le mode de sasie                 |
+| With     | nombre d'entier                             |
+| Scal     | Nombre de décimal après la virgule        |
+| Empty    | on -> Vide   off -> la zone est obligatoire |
+| Error    | message ce rapportant à la zone de saisie  |
+| Help     | aide avec la touche CtrlH                   |
+| Edt.Char | code par exemple : € $ ¥ ₪ £ %          |
+| Protect  | falg interdisant la saisie ou modification  |
 
 ![](assets/20220315_144050_ecr03_22png)
 
-définition attribut
-
 ![](assets/20220315_144139_ecr03_23png)
 
-With  -> nombre d'entier
-
-Scal  -> Nombre de décimal après la virgule
-
-Empty -> Vide = on sinon la zone est obligatoire
-
-Error -> message ce rapportant à la zone pour l'utilisateur
-
-Help  -> aide avec la touche CtrlH
-
-Edt.Char -> code par exemple : € $ ¥ ₪ £ %
-
-Protect -> falg interdisant la saisie ou modification.
-Est utile lors de saisie de clef de table et modification des zones si rapportant ex: saisie du n° client puis saisie des coordonnés du client.
-
-pour les zones Hiden
-
-exemple:
+* [ ] les zones Hiden
 
 ```pnlF1.hiden.add(defStringH("zone3",TEXT_FULL, "12101951"))                  # full String n° client
 pnlF1.hiden.add(defStringH("zone10",DATE_ISO, "2020-04-24"))                # full String
@@ -191,11 +175,29 @@ appel automatiquement la procédure ex: un combo ou calcul avec retour de donné
 
 * [ ] AltG - > Définition du Combo/Grid
 
+
+| field      | fonction                                 |
+| ------------ | ------------------------------------------ |
+| Form       | Combo / Grid                             |
+| Name       | nom du process                           |
+| PosX,Y     | défini au moment du clique de la souris |
+| Rows       | Nombre de ligne horizontale              |
+| Separateur | sepStyle noStyle                         |
+
 pensez à l'association de la zone process et name.combo
 
 ![](assets/20220320_232730_ecr03_31.png)
 
 * [ ] AltC -> Définiton des titres des  colonnes
+
+
+| field  | fonction                                          |
+| -------- | --------------------------------------------------- |
+| text   | titre de la colonne                               |
+| long   | nombre de caractères                             |
+| PosX,Y | défini au moment du clique de la souris          |
+| Type   | TEXT_FREE DIGIT ....                              |
+| Car    | code par exemple : € $ ¥ ₪ £ %sepStyle noStyl |
 
 ![](assets/20220320_221032_ecr03_32.png)
 
@@ -221,8 +223,6 @@ Résultat :
 
 ![](assets/20220320_221446_ecr03_40.png)
 
-Idem pour le Grid sans les items
-
 ---
 
 * [ ] AltM -> Menu:
@@ -239,11 +239,15 @@ Idem pour le Grid sans les items
 
 > F12 return
 
-Name : nom du menu
+| field  | fonction |
+| --- | --- |
+| Name   | nom du menu |
+| PosX,Y | défini au moment du clique de la souris |
+| ....| Item |
+| cadre |  1 ligne  2 lignes |
+| .... | Vertical ou Horizontal |
 
-cadre : line1  | line2 ||
 
-menu -> Vertical ou Horizontal
 
 ![](assets/20220323_035654_ecr04_01.png)
 
