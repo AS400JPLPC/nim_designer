@@ -191,13 +191,13 @@ pensez à l'association de la zone process et name.combo
 * [ ] AltC -> Définiton des titres des  colonnes
 
 
-| field  | fonction                                          |
-| -------- | --------------------------------------------------- |
-| text   | titre de la colonne                               |
-| long   | nombre de caractères                             |
-| PosX,Y | défini au moment du clique de la souris          |
-| Type   | TEXT_FREE DIGIT ....                              |
-| Car    | code par exemple : € $ ¥ ₪ £ %sepStyle noStyl |
+| field  | fonction                                 |
+| -------- | ------------------------------------------ |
+| text   | titre de la colonne                      |
+| long   | nombre de caractères                    |
+| PosX,Y | défini au moment du clique de la souris |
+| Type   | TEXT_FREE DIGIT ....                     |
+| Car    | code par exemple : € $ ¥ ₪ £ %       |
 
 ![](assets/20220320_221032_ecr03_32.png)
 
@@ -239,15 +239,14 @@ Résultat :
 
 > F12 return
 
-| field  | fonction |
-| --- | --- |
-| Name   | nom du menu |
+
+| field  | fonction                                 |
+| -------- | ------------------------------------------ |
+| Name   | nom du menu                              |
 | PosX,Y | défini au moment du clique de la souris |
-| ....| Item |
-| cadre |  1 ligne  2 lignes |
-| .... | Vertical ou Horizontal |
-
-
+| ....   | Item                                     |
+| cadre  | 1 ligne  2 lignes                        |
+| ....   | Vertical ou Horizontal                   |
 
 ![](assets/20220323_035654_ecr04_01.png)
 
