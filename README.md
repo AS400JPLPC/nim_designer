@@ -74,23 +74,22 @@ si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 | Name        | Obligatoire, le référencement et le panel sont lier voir exemple dans le source |
 | PosX,Y      | récupération du positionement de la souris                                      |
 | Heights     | nombre de lignes verticales                                                       |
-| Width       | nombre de caractères horizontals                                                 |
+| Width       | nombre de caractères horizontaux                                                 |
 | Cadre       | appuyer sur une touche, le choix apparaît ---- combo: ligne = 1 ligne =2         |
 | Title       | Titre du panel                                                                    |
-| F1..F24     | appuyer sur la bar d'espacemant pour activé la fonction                          |
+| F1..F24     | appuyer sur la bar d'espacemant pour activé/désactivé la fonction   |
 | Check Field | associer le controle par défault des zones comprise dans le panel                |
 
 ![](assets/20220315_033957_ecr02_02.png)
 
 > *F3* n'a pas besoin de crontôle ex: = exit programe
 >
-> *F9 F11* on besoin de faire le contrôle car les données ont des conséquences
->
+> *F9 F10* on besoin de faire le contrôle de cohérence des données saisie
 > vous pouvez dans le source affecter à la main d'autre valeur  ex CtrlV
 >
-> leurs donner un text plus explicite ex F9 = F9 Enrg.
+> leurs donner un texte plus explicite ex F9 = F9 Enrg.
 >
-> si vous ne mettez pas de text la fonction n'est pas visible à l'écran mais active
+> si vous ne mettez pas de texte la fonction n'est pas visible à l'écran mais active
 >
 > ne pas ce servir CrtlH qui est réserver à la saisie.
 >
@@ -107,10 +106,10 @@ pointer la souris pour positioner l'objet que vous voulez décrire.
 
 | key   | Fonction                                            |
 | ------- | ----------------------------------------------------- |
-| AltL  | Label  puis tapez votre label CtrlV valide le label |
-| AltT  | Titre  idem label                                   |
-| AltF  | Field                                               |
-| AltM  | Menu                                                |
+| AltL  | Label:  tapez votre label à validé par CtrlV |
+| AltT  | Titre:  idem label                                   |
+| AltF  | Field:                                               |
+| AltM  | Menu:                                                |
 | AltP  | display de tous les  menus                          |
 | AltG  | Combo/Grid                                          |
 | AltD  | affichage des objet Label Field Menu                |
@@ -268,11 +267,11 @@ exemple:
 
 ![](assets/20220320_233406_ecr03_50png)
 
-dans la sous directorie ./dspf
+dans la sous directory ./dspf
 
 "name.dspf" Génère un fichier json
 
-dans la directorie du programme TermSDA  "Source.nim" que vous pouvez compiler
+dans la directory du programme TermSDA  "Source.nim" que vous pouvez compiler
 
 ---
 
