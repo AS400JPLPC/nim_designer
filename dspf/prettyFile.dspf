@@ -1,6 +1,6 @@
 {
   "titleTerm": "DESIGNER",
-  "fileTerm": "prettyFile.dspf",
+  "fileTerm": "fieldMenu.dspf",
   "panel": [
     {
       "name": "FORM01",
@@ -457,21 +457,6 @@
           "EdtCar": "",
           "Protect": false,
           "Process": "TblPays"
-        },
-        {
-          "defFld": "defString",
-          "name": "ppproc",
-          "posx": 38,
-          "posy": 43,
-          "reftype": "FPROC",
-          "width": 10,
-          "empty": true,
-          "errmsg": "",
-          "help": "",
-          "text": "",
-          "EdtCar": "",
-          "Protect": true,
-          "Process": "tblPays"
         }
       ]
     }
@@ -479,12 +464,12 @@
   "menu": [],
   "sfile": [
     {
-      "name": "Tblpays",
+      "name": "TblPays",
       "panel": "FORM01",
       "form": "combo",
       "posx": 6,
       "posy": 76,
-      "nrow": 76,
+      "nrow": 10,
       "sep": "sepStyle",
       "cell": [
         {
