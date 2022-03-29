@@ -29,7 +29,7 @@ proc callRefTyp(fld : var FIELD) =
   addRows(Xcombo, @["SWITCH"])
   addRows(Xcombo, @["FPROC"])
   addRows(Xcombo, @["FCALL"])
-  printGridHeader(Xcombo)
+  #printGridHeader(Xcombo)
 
   case fld.text
     of "TEXT_FREE"            : g_pos = 0
@@ -77,7 +77,7 @@ proc callVH(fld : var FIELD)=
   setHeaders(Xcombo, @[g_line])
   addRows(Xcombo, @["vertical"])
   addRows(Xcombo, @["horizontal"])
-  printGridHeader(Xcombo)
+  #printGridHeader(Xcombo)
 
   case fld.text
     of "vertical"  : g_pos = 0
@@ -107,7 +107,7 @@ proc callCadreMenu(fld : var FIELD)=
   setHeaders(Xcombo, @[g_line])
   addRows(Xcombo, @["line1"])
   addRows(Xcombo, @["line2"])
-  printGridHeader(Xcombo)
+  #printGridHeader(Xcombo)
 
   case fld.text
     of "line1"  : g_pos = 1
@@ -140,7 +140,7 @@ proc callCadre(fld : var FIELD)=
   addRows(Xcombo, @["line0"])
   addRows(Xcombo, @["line1"])
   addRows(Xcombo, @["line2"])
-  printGridHeader(Xcombo)
+  #printGridHeader(Xcombo)
 
   case fld.text
     of "line0"  : g_pos = 0

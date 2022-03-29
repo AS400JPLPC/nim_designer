@@ -2,18 +2,16 @@
 
 dépendance : **Termkey Termcurs**
 
-# Testing 2022-03-21   11h55
+# dépôt Testing 2022-03-21   11h55
 
-* change procSDA procJson 2022-03-21 15h40  modification
-* change procMenu 2022-03-23 4h09 fonction AltP CrtlP (harmonisation cmd)
-* update procInit 2022-03-26 change libellé date
-* update reademe 2022-03-27
-* update procSDA 2022-03-08 display label... posX = 1
+* change procSDA  2022-03-29 optimization grid / combo last update
+* update reademe  2022-03-27
 
 ---
 
 # but:
-Soulager la compréhention par la visualisation des Formulaires puis de générer le code.
+
+Soulager la compréhension par la visualisation des Formulaires puis de générer le code.
 
 Créer des programmes en pure NIM,sans lib externe et occupant peu de place mémoire.
 
@@ -22,10 +20,10 @@ l'utilisation de **Termvte** , crée une fenêtre terminale, beaucoup plus soupl
 elle peut fonctionner dans un terminal que vous paramétrez.
 
 # vidéo
+
 tutoreil vidéo
 
 # utilisation du logiciel:
-
 
 Utiliser la souris pour naviguer, sélectionner, positionner...
 
@@ -77,7 +75,7 @@ si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 | Width       | nombre de caractères horizontaux                                                 |
 | Cadre       | appuyer sur une touche, le choix apparaît ---- combo: ligne = 1 ligne =2         |
 | Title       | Titre du panel                                                                    |
-| F1..F24     | appuyer sur la bar d'espacemant pour activé/désactivé la fonction   |
+| F1..F24     | appuyer sur la bar d'espacemant pour activé/désactivé la fonction              |
 | Check Field | associer le controle par défault des zones comprise dans le panel                |
 
 ![](assets/20220315_033957_ecr02_02.png)
@@ -104,21 +102,21 @@ si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 pointer la souris pour positioner l'objet que vous voulez décrire.
 
 
-| key   | Fonction                                            |
-| ------- | ----------------------------------------------------- |
+| key   | Fonction                                       |
+| ------- | ------------------------------------------------ |
 | AltL  | Label:  tapez votre label à validé par CtrlV |
-| AltT  | Titre:  idem label                                   |
-| AltF  | Field:                                               |
-| AltM  | Menu:                                                |
-| AltP  | display de tous les  menus                          |
-| AltG  | Combo/Grid                                          |
-| AltD  | affichage des objet Label Field Menu                |
-| AltO  | réordonner les objet Label Field                   |
-| AltR  | remove les objet Label Field Menu Combo/Grid        |
-| AltS  | réaffichage du terminal                            |
-| CtrlQ | fermeture du panel retour au menu principal         |
-|       |                                                     |
-| CtrlH | réserver à la saisie pour Help field              |
+| AltT  | Titre:  idem label                             |
+| AltF  | Field:                                         |
+| AltM  | Menu:                                          |
+| AltP  | display de tous les  menus                     |
+| AltG  | Combo/Grid                                     |
+| AltD  | affichage des objet Label Field Menu           |
+| AltO  | réordonner les objet Label Field              |
+| AltR  | remove les objet Label Field Menu Combo/Grid   |
+| AltS  | réaffichage du terminal                       |
+| CtrlQ | fermeture du panel retour au menu principal    |
+|       |                                                |
+| CtrlH | réserver à la saisie pour Help field         |
 
 ---
 

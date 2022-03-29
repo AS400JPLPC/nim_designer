@@ -538,8 +538,7 @@ proc PanelDef() =
         callQuery[getProcess(pnl,Index(pnl))] (pnl.field[Index(pnl)])
         fldP.cadrex = parseEnum[CADRE](getText(pnl,P_F1[PCadre]))
         setText(pnl,P_F1[PCadre],$fldP.cadrex)
-      setTerminal()
-      printPanel(pnl)
+
       nPnl= 1
     of TKey.F9 , TKey.F10:
       ## Contrôle  Format Panel full Field

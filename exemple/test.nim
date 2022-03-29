@@ -28,7 +28,7 @@ proc TblPays(fld : var FIELD) =
   addRows(combo, @["CHINE"])
   addRows(combo, @["CORE-SUD"])
   addRows(combo, @["JAPON"])
-  printGridHeader(combo)
+
 
   case fld.text
     of "FRANCE"               : g_pos = 0

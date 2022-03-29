@@ -217,7 +217,6 @@ proc writeMenu(mnux:int)=
       of TKey.PROC:
         if isProcess(pmenu,Index(pmenu)) :
           callQuery[getProcess(pmenu,Index(pmenu))] (pmenu.field[Index(pmenu)])
-        printPanel(detail)
         printPanel(pmenu)
 
       of TKey.F9:

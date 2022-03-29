@@ -53,7 +53,6 @@ proc myproc(fld : var FIELD) =
   addRows(Xcombo, @[ "Espagne" ])
   addRows(Xcombo, @[ "Italie" ])
 
-  printGridHeader(Xcombo)
   case fld.text
     of "France"   : Cell_pos = 0 
     of "Espagne"   : Cell_pos = 1 

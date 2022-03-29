@@ -361,6 +361,7 @@ while true:
               for n in 0..len(ZMENU)-1:
                 addRows(Zgrid, @[setID(Cell_numIDx), ZMENU[n].name, $ZMENU[n].posx, $ZMENU[n].posy, $ZMENU[n].orientation])
             else : discard
+          # printGridHeader and printGridRows = not call proc oGrid(...)
           printGridHeader(Zgrid)
           printGridRows(Zgrid)
           while true :
@@ -608,7 +609,6 @@ while true:
               nLine.add(fmt"  addRows(Xcombo, @[{zoneItem}])")
 
             nLine.add(fmt"")
-            nLine.add(fmt"  printGridHeader(Xcombo)")
 
             nLine.add(fmt"  case fld.text")
             for i in 0..len(NSFILE[n].citem)-1 :

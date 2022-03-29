@@ -536,7 +536,6 @@ proc rmvField()=
   var g_type    = defCell("Type",19,ALPHA)
   var g_numID = - 1
   setHeaders(Zgrid, @[g_id, g_name, g_posx, g_posy, g_type])
-  printGridHeader(Zgrid)
   for n in 0..len(base[PanelWork].field)-1:
         addRows(Zgrid, @[setID(g_numID), getName(detail,n), $getPosx(detail,n), $getPosy(detail,n), $getRefType(detail,n)])
 
@@ -552,15 +551,8 @@ proc rmvField()=
       for n in 0..len(detail.label) :
         if detail.field[n].name == getrowName(Zgrid,getIndexG(Zgrid,val[0])):
           detail.field.delete(n)
+          dltRows(Zgrid,getIndexG(Zgrid,val[0]))
           break
-
-      Zgrid  = newGrid("GRID01",2,2,30)
-      setHeaders(Zgrid, @[g_id, g_name, g_posx, g_posy, g_type])
-      printGridHeader(Zgrid)
-      g_numID = - 1
-      for n in 0..len(detail.field)-1:
-        addRows(Zgrid, @[setID(g_numID), getName(detail,n), $getPosx(detail,n), $getPosy(detail,n), $getRefType(detail,n)])
-
 
 
 

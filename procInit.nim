@@ -11,7 +11,7 @@ proc ViewDspf() : string =
 
 
   setHeaders(Xcombo, @[g_id, g_text, g_last, g_upd])
-  printGridHeader(Xcombo)
+
   var g_numID = 0
   for kind, path in walkDir("dspf"):
     addRows(Xcombo, @[setID(g_numID), $path ,
@@ -87,7 +87,7 @@ proc LoadInit(): bool =
   addRows(comboM, @["New"])
   addRows(comboM, @["Recovery"])
   addRows(comboM, @["Exit"])
-  printGridHeader(comboM)
+
 
   while true :
     setTerminal()

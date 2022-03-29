@@ -165,8 +165,6 @@ proc queryTypeCell(fld : var FIELD) =
   addRows(Xcombo, @["DECIMAL"])
   addRows(Xcombo, @["DECIMAL_SIGNED"])
 
-  printGridHeader(Xcombo)
-
   case fld.text
     of "TEXT_FREE"            : g_pos = 0
     of "DIGIT"                : g_pos = 1
@@ -205,7 +203,6 @@ proc queryColorCell(fld : var FIELD) =
   addRows(Xcombo, @["Magenta"])
   addRows(Xcombo, @["Cyan"])
   addRows(Xcombo, @["White"])
-  printGridHeader(Xcombo)
 
 
   case fld.text
@@ -335,6 +332,7 @@ proc ViewCellSfile(nitem : seq[CELL_Sfile]) =
   for i in 0..len(nitem)-1:
     addRows(Xgrid, @[setID(g_numID), $nitem[i].text, $nitem[i].long, $nitem[i].reftyp,$nitem[i].cellatr] )
 
+  # printGridHeader and printGridRows = not call proc oGrid(...)
   printGridHeader(Xgrid)
   printGridRows(Xgrid)
 
@@ -408,7 +406,6 @@ proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
   var g_color = defCell("color",6 ,TEXT_FREE)
 
   setHeaders(Xgrid, @[g_id, g_text, g_len, g_type, g_color])
-  printGridHeader(Xgrid)
 
   var g_numID = 0
   for i in 0..len(nitem)-1:
@@ -431,7 +428,6 @@ proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
           break
       Xgrid  = newGrid("GRIDCOMBO",1,1,30)
       setHeaders(Xgrid, @[g_id, g_text, g_len, g_type, g_color])
-      printGridHeader(Xgrid)
 
       for i in 0..len(nitem)-1:
         addRows(Xgrid, @[setID(g_numID), $nitem[i].text, $nitem[i].long, $nitem[i].reftyp, $nitem[i].cellatr] )
