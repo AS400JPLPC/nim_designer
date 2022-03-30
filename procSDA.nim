@@ -326,9 +326,9 @@ while true:
               onCursor()
               continue
             of 1 :
-              Zgrid = newGrid("GRID01",1,1,5)
+              Zgrid = newGrid("GRID01",1,1,20)
               var Cell_idl      = defCell("ID",3,DIGIT)
-              var Cell_namel    = defCell("Name",10,ALPHA,cellYellow)
+              var Cell_namel    = defCell("Name",10,TEXT_FREE,cellYellow)
               var Cell_posxl    = defCell("PosX",4,DIGIT)
               var Cell_posyl    = defCell("PosY",4,DIGIT)
               var Cell_textl    = defCell("Text",30,TEXT_FREE)
@@ -338,24 +338,29 @@ while true:
               for n in 0..len(base[PanelWork].label)-1:
                 addRows(Zgrid, @[setID(Cell_numIDx), getNameL(base[PanelWork],n), $getPosxL(base[PanelWork],n),$getPosyL(base[PanelWork],n),getTextL(base[PanelWork],n),$isTitle(base[PanelWork],n)])
             of 2:
-              Zgrid  = newGrid("GRID01",1,2,5)
+              Zgrid  = newGrid("GRID01",1,2,20)
               var Cell_idf      = defCell("ID",3,DIGIT)
-              var Cell_namef    = defCell("Name",10,ALPHA,cellYellow)
+              var Cell_namef    = defCell("Name",15,TEXT_FREE,cellYellow)
               var Cell_posxf    = defCell("PosX",4,DIGIT)
               var Cell_posyf    = defCell("PosY",4,DIGIT)
-              var Cell_typef    = defCell("Type",19,ALPHA)
+              var Cell_typef    = defCell("Type",14,TEXT_FREE)
+              var Cell_lenf      = defCell("len" ,4,DIGIT)
+              var Cell_scalf     = defCell("scal",4,DIGIT)
+              var Cell_emptyf    = defCell("empty",5,SWITCH)
+              var Cell_processf  = defCell("process",15,TEXT_FREE)
+
               Cell_numIDx = - 1
-              setHeaders(Zgrid, @[Cell_idf, Cell_namef, Cell_posxf, Cell_posyf, Cell_typef])
+              setHeaders(Zgrid, @[Cell_idf, Cell_namef, Cell_posxf, Cell_posyf, Cell_typef, Cell_lenf, Cell_scalf, Cell_emptyf, Cell_processf])
               for n in 0..len(base[PanelWork].field)-1:
-                addRows(Zgrid, @[setID(Cell_numIDx), getName(base[PanelWork],n), $getPosx(base[PanelWork],n),$getPosyL(base[PanelWork],n),$getRefType(base[PanelWork],n)])
+                addRows(Zgrid, @[setID(Cell_numIDx), getName(base[PanelWork],n), $getPosx(base[PanelWork],n),$getPosyL(base[PanelWork],n),$getRefType(base[PanelWork],n) ,$getWidth(base[PanelWork],n) ,$getScal(base[PanelWork],n) ,$getEmpty(base[PanelWork],n) ,getProcess(base[PanelWork],n) ])
 
             of 3:
-              Zgrid  = newGrid("GRID01",1,2,5)
+              Zgrid  = newGrid("GRID01",1,2,20)
               var Cell_idm      = defCell("ID",3,DIGIT)
-              var Cell_namem    = defCell("Name",10,ALPHA,cellYellow)
+              var Cell_namem    = defCell("Name",10,TEXT_FREE,cellYellow)
               var Cell_posxm    = defCell("PosX",4,DIGIT)
               var Cell_posym    = defCell("PosY",4,DIGIT)
-              var Cell_typem    = defCell("Type",10,ALPHA)
+              var Cell_typem    = defCell("Type",14,TEXT_FREE)
               Cell_numIDx = - 1
               setHeaders(Zgrid, @[Cell_idm, Cell_namem, Cell_posxm, Cell_posym, Cell_typem])
               for n in 0..len(ZMENU)-1:
@@ -629,6 +634,7 @@ while true:
             nLine.add(fmt"""callQuery["{NSFILE[n].name}"] = {NSFILE[n].name} """)
 
             nLine.add(fmt"#===================================================")
+            nLine.add(fmt"")
 
       #-------------------------------------------------
       # Sous-fichier    combo

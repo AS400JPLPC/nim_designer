@@ -58,7 +58,7 @@ var pmenu = newPanel("pmenu",1,104,24,26,@[defButton(TKey.F9,"F9 Enrg.",true),de
 
 
 pmenu.label.add(defLabel($Lmnun, 2, 4, "Name.:"))
-pmenu.field.add(defString($Fmnun, 2, 4 + len(pmenu.label[L_F2[Lmnun]].text) , ALPHA_NUMERIC,10,"", FILL, "", "Name Menu"))
+pmenu.field.add(defString($Fmnun, 2, 4 + len(pmenu.label[L_F2[Lmnun]].text) , ALPHA_NUMERIC,15,"", FILL, "", "Name Menu"))
 
 pmenu.label.add(defLabel($Lmnux, 3, 4, "PosX.....:"))
 pmenu.field.add(defNumeric($Fmnux , 3, 4 + len(pmenu.label[L_F2[Lmnux]].text), DIGIT ,
@@ -106,7 +106,7 @@ proc callMenu(mnuchx : seq[Vmenu]) : int =
   var g_pos : int = -1
   var Xcombo  = newGRID("COMBO1",1,1,20,sepStyle)
   var g_id    = defCell("ID",3,DIGIT)
-  var g_name  = defCell("Name",10,TEXT_FREE)
+  var g_name  = defCell("Name",15,TEXT_FREE)
 
   setHeaders(Xcombo, @[g_id, g_name])
 
@@ -115,7 +115,7 @@ proc callMenu(mnuchx : seq[Vmenu]) : int =
     addRows(Xcombo, @[setID(g_numID), mnuchx[i].name ])
 
 
-  addRows(Xcombo, @["999", "Add", "Menu"])
+  addRows(Xcombo, @["999", "Add-Menu"])
 
   while true :
     let (keys, val) = ioGrid(Xcombo,g_pos)
@@ -181,6 +181,11 @@ proc writeMenu(mnux:int)=
     pmenu.field[F_F2[Fmnuy]].text = $(ZMENU[nM].posy)
     for i in 0.. len(ZMENU[nm].item)-1 :
       pmenu.field[nMi].text = ZMENU[nM].item[i]
+      var itemlen : int = len(pmenu.field[nMi].text) - 1
+      while (true):
+        if pmenu.field[nMi].text[itemlen] == ' ':
+          pmenu.field[nMi].text[itemlen] ='#'
+        else : break
       inc(nMi)
 
     SX = ZMENU[nM].posx
@@ -294,7 +299,7 @@ proc rmvMenu()=
   printPanel(orderZ)
   offMouse()
 
-  Zgrid  = newGrid("GRID01",2,2,30)
+  Zgrid  = newGrid("GRID01",2,2,20)
   var g_idm      = defCell("ID",3,DIGIT)
   var g_namem    = defCell("Name",10,ALPHA,cellYellow)
   var g_posxm    = defCell("PosX",4,DIGIT)
@@ -315,11 +320,5 @@ proc rmvMenu()=
         if ZMENU[n].name == getrowName(Zgrid,getIndexG(Zgrid,val[0])):
           ZMENU.delete(n)
           break
-      Zgrid  = newGrid("GRID01",2,2,30)
-      setHeaders(Zgrid, @[g_idm, g_namem, g_posxm, g_posym, g_linem, g_typem,])
-
-      printGridHeader(Zgrid)
-      for n in 0..len(ZMENU)-1:
-        addRows(Zgrid, @[setID(g_numID), ZMENU[n].name, $ZMENU[n].posx, $ZMENU[n].posy, $ZMENU[n].cadre, $ZMENU[n].orientation])
 
     if keys == TKey.Escape : return

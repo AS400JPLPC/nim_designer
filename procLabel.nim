@@ -197,7 +197,7 @@ proc labelDef(majuscule : int)=
             base[PanelWork].label.add(defTitle(fldL.name, SX - base[PanelWork].posx + 1, SY - base[PanelWork].posy + 1, v_TEXT))
 
           break
-      if key == TKey.F12 : break
+      if key == TKey.Escape : break
 
   setTerminal()
   printPanel(detail)
@@ -214,8 +214,8 @@ proc orderLabel()=
   printPanel(orderZ)
   offMouse()
 
-  Zgrid  = newGrid("GRID01",2,2,30)
-  Zdup   = newGrid("GRID02",2,65,30)
+  Zgrid  = newGrid("GRID01",2,2,20)
+  Zdup   = newGrid("GRID02",2,65,20)
   var g_id      = defCell("ID",3,DIGIT)
   var g_name    = defCell("Name",10,ALPHA,cellYellow)
   var g_posx    = defCell("PosX",4,DIGIT)
@@ -273,7 +273,7 @@ proc rmvLabel()=
   printPanel(orderZ)
   offMouse()
 
-  Zgrid  = newGrid("GRID01",2,2,30)
+  Zgrid  = newGrid("GRID01",2,2,20)
   var g_id      = defCell("ID",3,DIGIT)
   var g_name    = defCell("Name",10,ALPHA,cellYellow)
   var g_posx    = defCell("PosX",4,DIGIT)

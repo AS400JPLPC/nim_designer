@@ -110,8 +110,8 @@ proc callCadreMenu(fld : var FIELD)=
   #printGridHeader(Xcombo)
 
   case fld.text
-    of "line1"  : g_pos = 1
-    of "line2"  : g_pos = 2
+    of "line1"  : g_pos = 0
+    of "line2"  : g_pos = 1
 
 
   while true :
@@ -194,23 +194,25 @@ proc callField(pfield : PANEL) : int =
   if X < 12 :
     Xcombo  = newGRID("COMBO6",terminalHeight()-12,1,10,sepStyle)
   else:
-    Xcombo  = newGRID("COMBO07",1,1,10,sepStyle)
+    Xcombo  = newGRID("COMBO07",1,1,20,sepStyle)
   var g_id      = defCell("ID",3,DIGIT)
-  var g_name    = defCell("Name",10,ALPHA,cellYellow)
+  var g_name    = defCell("Name",15,TEXT_FREE,cellYellow)
   var g_posx    = defCell("PosX",4,DIGIT)
   var g_posy    = defCell("PosY",4,DIGIT)
   var g_type    = defCell("Type",19,ALPHA)
   var g_len     = defCell("len" ,4,DIGIT)
   var g_scal    = defCell("scal",4,DIGIT)
+  var g_empty   = defCell("empty",5,SWITCH)
+  var g_process = defCell("empty",15,TEXT_FREE)
 
-  setHeaders(Xcombo, @[g_id, g_name, g_posx, g_posy, g_type, g_len, g_scal ])
+  setHeaders(Xcombo, @[g_id, g_name, g_posx, g_posy, g_type, g_len, g_scal, g_empty, g_process ])
 
   var g_numID = 0
   for i in 0..len(pfield.field )-1:
-    addRows(Xcombo, @[setID(g_numID), getName(pfield,i), $getPosx(pfield,i), $getPosy(pfield,i), $getRefType(pfield,i), $getWidth(pfield,i), $getScal(pfield,i) ])
+    addRows(Xcombo, @[setID(g_numID), getName(pfield,i), $getPosx(pfield,i), $getPosy(pfield,i), $getRefType(pfield,i), $getWidth(pfield,i), $getScal(pfield,i), $getEmpty(pfield,i), getProcess(pfield,i)  ])
 
 
-  addRows(Xcombo, @["999", "Add", "Field","","","",""])
+  addRows(Xcombo, @["999", "Add-Field", "","","","","","",""])
 
   while true :
     let (keys, val) = ioGrid(Xcombo,g_pos)

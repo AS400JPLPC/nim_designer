@@ -1,0 +1,796 @@
+{
+  "titleTerm": "CONTACT",
+  "fileTerm": "contact.dspf",
+  "panel": [
+    {
+      "name": "fecr01",
+      "posx": 1,
+      "posy": 1,
+      "height": 32,
+      "width": 132,
+      "cadre": "line1",
+      "title": "CONTACT",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F4",
+          "txtKey": "F4",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F9",
+          "txtKey": "F9",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F10",
+          "txtKey": "F10",
+          "ctrl": true,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "label",
+          "name": "L02108",
+          "posx": 2,
+          "posy": 108,
+          "text": "Trie.:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "SELECTION",
+          "posx": 2,
+          "posy": 114,
+          "reftype": "FPROC",
+          "width": 15,
+          "empty": true,
+          "errmsg": "Obligatoire",
+          "help": "Trier Par Nom/Famille/Amis/Profession",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "tselection"
+        }
+      ]
+    },
+    {
+      "name": "fecr02",
+      "posx": 1,
+      "posy": 1,
+      "height": 32,
+      "width": 132,
+      "cadre": "line1",
+      "title": "Saisie CONTACT",
+      "button": [
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F4",
+          "txtKey": "F4",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F9",
+          "txtKey": "F9",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F10",
+          "txtKey": "F10",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F12",
+          "txtKey": "F12",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "Title",
+          "name": "L02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "INDEX.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L05002",
+          "posx": 5,
+          "posy": 2,
+          "text": "Nom.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L05039",
+          "posx": 5,
+          "posy": 39,
+          "text": "Prénom.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L05079",
+          "posx": 5,
+          "posy": 79,
+          "text": "Civilité.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L05095",
+          "posx": 5,
+          "posy": 95,
+          "text": "Type.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L07002",
+          "posx": 7,
+          "posy": 2,
+          "text": "Tel.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L07026",
+          "posx": 7,
+          "posy": 26,
+          "text": "Mail.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L09002",
+          "posx": 9,
+          "posy": 2,
+          "text": "Date de naissance.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L11002",
+          "posx": 11,
+          "posy": 2,
+          "text": "Adresse.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L15002",
+          "posx": 15,
+          "posy": 2,
+          "text": "C.Postal:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L17002",
+          "posx": 17,
+          "posy": 2,
+          "text": "Pays....:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L19002",
+          "posx": 19,
+          "posy": 2,
+          "text": "Note....:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L24002",
+          "posx": 24,
+          "posy": 2,
+          "text": "Profession.:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L26002",
+          "posx": 26,
+          "posy": 2,
+          "text": "Société....:"
+        },
+        {
+          "defLabel": "label",
+          "name": "L26046",
+          "posx": 26,
+          "posy": 46,
+          "text": "Tel.société.:"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defNumeric",
+          "name": "INDEX",
+          "posx": 2,
+          "posy": 9,
+          "reftype": "DIGIT",
+          "width": 4,
+          "scal": 0,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "NOM",
+          "posx": 5,
+          "posy": 7,
+          "reftype": "ALPHA_UPPER",
+          "width": 30,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Nom du Contact",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "PRENOM",
+          "posx": 5,
+          "posy": 47,
+          "reftype": "TEXT_FREE",
+          "width": 30,
+          "empty": false,
+          "errmsg": "OBLIGATOIRE",
+          "help": "Prénom du contact",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "CIVILITE",
+          "posx": 5,
+          "posy": 89,
+          "reftype": "FPROC",
+          "width": 4,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Civilité M. Mme.",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "tcivilite"
+        },
+        {
+          "defFld": "defString",
+          "name": "RELATION",
+          "posx": 5,
+          "posy": 101,
+          "reftype": "FPROC",
+          "width": 15,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Relation",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "trelation"
+        },
+        {
+          "defFld": "defTelephone",
+          "name": "TEL",
+          "posx": 7,
+          "posy": 7,
+          "reftype": "TELEPHONE",
+          "width": 15,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "N° de téléphone",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defMail",
+          "name": "MAIL",
+          "posx": 7,
+          "posy": 32,
+          "reftype": "MAIL_ISO",
+          "width": 100,
+          "empty": true,
+          "errmsg": "",
+          "help": "Adresse Mail",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defDate",
+          "name": "DJN",
+          "posx": 9,
+          "posy": 21,
+          "reftype": "DATE_ISO",
+          "empty": true,
+          "errmsg": "",
+          "help": "Date de naissance AAAA-MM-JJ",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "ADR1",
+          "posx": 11,
+          "posy": 11,
+          "reftype": "TEXT_FREE",
+          "width": 30,
+          "empty": true,
+          "errmsg": "",
+          "help": "Adresse du contact N°rue....",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "ADR2",
+          "posx": 12,
+          "posy": 11,
+          "reftype": "TEXT_FREE",
+          "width": 30,
+          "empty": true,
+          "errmsg": "",
+          "help": "Suite adresse",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "ADR3",
+          "posx": 13,
+          "posy": 11,
+          "reftype": "TEXT_FREE",
+          "width": 30,
+          "empty": true,
+          "errmsg": "",
+          "help": "Suite adresse",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "CPTT",
+          "posx": 15,
+          "posy": 11,
+          "reftype": "FPROC",
+          "width": 10,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Code Postal",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "tcptt"
+        },
+        {
+          "defFld": "defString",
+          "name": "VILLE",
+          "posx": 15,
+          "posy": 23,
+          "reftype": "TEXT_FREE",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "Ville",
+          "text": "",
+          "EdtCar": "",
+          "Protect": true,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "CPAYS",
+          "posx": 17,
+          "posy": 11,
+          "reftype": "FPROC",
+          "width": 3,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Pays (Habitation)",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "tpays"
+        },
+        {
+          "defFld": "defString",
+          "name": "LPAYS",
+          "posx": 17,
+          "posy": 15,
+          "reftype": "TEXT_FREE",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "Nom du Pays",
+          "text": "",
+          "EdtCar": "",
+          "Protect": true,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "NOTE1",
+          "posx": 20,
+          "posy": 2,
+          "reftype": "TEXT_FULL",
+          "width": 120,
+          "empty": true,
+          "errmsg": "",
+          "help": "Note ou rappel",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "NOTE2",
+          "posx": 21,
+          "posy": 2,
+          "reftype": "TEXT_FULL",
+          "width": 120,
+          "empty": true,
+          "errmsg": "",
+          "help": "Note ou rappel",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "NOTE3",
+          "posx": 22,
+          "posy": 2,
+          "reftype": "TEXT_FULL",
+          "width": 120,
+          "empty": true,
+          "errmsg": "",
+          "help": "Note ou rappel",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defString",
+          "name": "CPROF",
+          "posx": 24,
+          "posy": 14,
+          "reftype": "FPROC",
+          "width": 20,
+          "empty": true,
+          "errmsg": "",
+          "help": "Profession",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": "tprofession"
+        },
+        {
+          "defFld": "defString",
+          "name": "SOCIETE",
+          "posx": 26,
+          "posy": 14,
+          "reftype": "TEXT_FREE",
+          "width": 30,
+          "empty": true,
+          "errmsg": "",
+          "help": "Nom de la société",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defTelephone",
+          "name": "TELCIE",
+          "posx": 26,
+          "posy": 59,
+          "reftype": "TELEPHONE",
+          "width": 15,
+          "empty": true,
+          "errmsg": "format (033)1234567890",
+          "help": "Téléphone de la société",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        }
+      ]
+    }
+  ],
+  "menu": [
+    {
+      "name": "filtre",
+      "posx": 2,
+      "posy": 2,
+      "orientation": "horizontal",
+      "cadre": "line1",
+      "item": [
+        "* ",
+        "A ",
+        "B ",
+        "C ",
+        "D ",
+        "E ",
+        "F ",
+        "G ",
+        "H ",
+        "I ",
+        "J ",
+        "K ",
+        "L ",
+        "M ",
+        "N "
+      ]
+    }
+  ],
+  "sfile": [
+    {
+      "name": "SFL01",
+      "panel": "fecr01",
+      "form": "grid",
+      "posx": 5,
+      "posy": 2,
+      "nrow": 22,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "INDEX",
+          "long": 4,
+          "reftyp": "DIGIT",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        },
+        {
+          "colonne": "NAME",
+          "long": 30,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "PRENOM",
+          "long": 30,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Green",
+          "edtcar": ""
+        },
+        {
+          "colonne": "TEL",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "White",
+          "edtcar": ""
+        },
+        {
+          "colonne": "RELATION",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Yellow",
+          "edtcar": ""
+        }
+      ],
+      "item": []
+    },
+    {
+      "name": "tcivilite",
+      "panel": "fecr02",
+      "form": "combo",
+      "posx": 5,
+      "posy": 89,
+      "nrow": 2,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Civilité",
+          "long": 4,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "M."
+          ]
+        },
+        {
+          "citem": [
+            "Mme."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tcptt",
+      "panel": "fecr02",
+      "form": "combo",
+      "posx": 17,
+      "posy": 11,
+      "nrow": 14,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Code",
+          "long": 10,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "Lcptt",
+          "long": 20,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "11110",
+            "Coursan"
+          ]
+        },
+        {
+          "citem": [
+            "11100",
+            "Narbonne"
+          ]
+        },
+        {
+          "citem": [
+            "11100",
+            "narbonne"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tpays",
+      "panel": "fecr02",
+      "form": "combo",
+      "posx": 17,
+      "posy": 11,
+      "nrow": 12,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Code",
+          "long": 3,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "lcpays",
+          "long": 20,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "FRA",
+            "France"
+          ]
+        },
+        {
+          "citem": [
+            "DEU",
+            "Allemagne"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "trelation",
+      "panel": "fecr02",
+      "form": "combo",
+      "posx": 5,
+      "posy": 101,
+      "nrow": 3,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Relation",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "Famille"
+          ]
+        },
+        {
+          "citem": [
+            "Amis"
+          ]
+        },
+        {
+          "citem": [
+            "Professionnel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tselection",
+      "panel": "fecr01",
+      "form": "combo",
+      "posx": 2,
+      "posy": 114,
+      "nrow": 4,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Select-Trie",
+          "long": 15,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        }
+      ],
+      "item": [
+        {
+          "citem": [
+            "Nom"
+          ]
+        },
+        {
+          "citem": [
+            "Famille"
+          ]
+        },
+        {
+          "citem": [
+            "Amis"
+          ]
+        },
+        {
+          "citem": [
+            "Profession"
+          ]
+        }
+      ]
+    }
+  ]
+}

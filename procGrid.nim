@@ -53,20 +53,20 @@ var SpnlSfile = newPanel("PNLSFILE",1,1,4,100,@[defButton(TKey.F9,"Enrg",true),d
 # LABEL  -> CELL
 SpnlSfile.label.add(deflabel("L02002", 2, 2,  "Form.:"))
 SpnlSfile.label.add(deflabel("L02002", 2, 14, "Name.:"))
-SpnlSfile.label.add(deflabel("L02020", 2, 32, "Posx.:"))
-SpnlSfile.label.add(deflabel("L02031", 2, 42, "Posy.:"))
-SpnlSfile.label.add(deflabel("L02051", 2, 62, "Rows.:"))
-SpnlSfile.label.add(deflabel("L02061", 2, 72, "Sep..:"))
+SpnlSfile.label.add(deflabel("L02020", 2, 37, "Posx.:"))
+SpnlSfile.label.add(deflabel("L02031", 2, 47, "Posy.:"))
+SpnlSfile.label.add(deflabel("L02051", 2, 57, "Rows.:"))
+SpnlSfile.label.add(deflabel("L02061", 2, 67, "Sep..:"))
 # FIELD -> SFILE
 SpnlSfile.field.add(defString($Sform, 2, 8, FPROC,5,"", FILL, "Obligatoire", "combo|grid"))
 setProcess(SpnlSfile.field[F_S0[Sform]],"queryForm")
-SpnlSfile.field.add(defString($Sname, 2, 20, TEXT_FREE,10,"", FILL, "Obligatoire", "Name SFILE"))
-SpnlSfile.field.add(defNumeric($Sposx, 2,38, DIGIT,2,0,"", EMPTY, "",""))
+SpnlSfile.field.add(defString($Sname, 2, 20, TEXT_FREE,15,"", FILL, "Obligatoire", "Name SFILE"))
+SpnlSfile.field.add(defNumeric($Sposx, 2,43, DIGIT,2,0,"", EMPTY, "",""))
 setProtect(SpnlSfile.field[F_S0[Sposx]],true)
-SpnlSfile.field.add(defNumeric($Sposy, 2,48, DIGIT,3,0,"", EMPTY, "",""))
+SpnlSfile.field.add(defNumeric($Sposy, 2,53, DIGIT,3,0,"", EMPTY, "",""))
 setProtect(SpnlSfile.field[F_S0[Sposy]],true)
-SpnlSfile.field.add(defNumeric($Snrow, 2, 68, DIGIT,2,0,"", FILL, "Obligatoire", "Nombre Rows"))
-SpnlSfile.field.add(defString($Ssep, 2, 78, FPROC,8,"", FILL, "Obligatoire", "sepStyle > '|'  noStyle >' ' "))
+SpnlSfile.field.add(defNumeric($Snrow, 2, 63, DIGIT,2,0,"", FILL, "Obligatoire", "Nombre Rows"))
+SpnlSfile.field.add(defString($Ssep, 2, 73, FPROC,8,"", FILL, "Obligatoire", "sepStyle > '|'  noStyle >' ' "))
 setProcess(SpnlSfile.field[F_S0[Ssep]],"querySeparatorCell")
 
 
@@ -92,9 +92,9 @@ setRegex(SpnlCell,$Cedtcar,"^[€%£$¥ ]")
 #===================================================
 proc queryForm(fld : var FIELD) =
   var g_pos : int = -1
-  var Xcombo  = newGRID("COMBO20",2,2,3,sepStyle)
+  var Xcombo  = newGRID("COMBO20",2,2,2,sepStyle)
 
-  var g_type  = defCell("Ref.Type",10,TEXT_FREE)
+  var g_type  = defCell("Ref.Type",5,TEXT_FREE)
 
   setHeaders(Xcombo, @[g_type])
   addRows(Xcombo, @["combo"])
@@ -123,9 +123,9 @@ callQuery["queryForm"] = queryForm
 #===================================================
 proc querySeparatorCell(fld : var FIELD) =
   var g_pos : int = -1
-  var Xcombo  = newGRID("COMBO21",2,2,3,sepStyle)
+  var Xcombo  = newGRID("COMBO21",2,2,2,sepStyle)
 
-  var g_type  = defCell("Ref.Type",10,TEXT_FREE)
+  var g_type  = defCell("Ref.Type",8,TEXT_FREE)
 
   setHeaders(Xcombo, @[g_type])
   addRows(Xcombo, @["sepStyle"])
@@ -164,6 +164,8 @@ proc queryTypeCell(fld : var FIELD) =
   addRows(Xcombo, @["DIGIT_SIGNED"])
   addRows(Xcombo, @["DECIMAL"])
   addRows(Xcombo, @["DECIMAL_SIGNED"])
+  addRows(Xcombo, @["SWITCH"])
+  addRows(Xcombo, @["PASSWORD"])
 
   case fld.text
     of "TEXT_FREE"            : g_pos = 0
@@ -171,6 +173,8 @@ proc queryTypeCell(fld : var FIELD) =
     of "DIGIT_SIGNED"         : g_pos = 2
     of "DECIMAL"              : g_pos = 3
     of "DECIMAL_SIGNED"       : g_pos = 4
+    of "SWITCH"               : g_pos = 5
+    of "PASSWORD"             : g_pos = 6
 
     else : discard
 
@@ -181,6 +185,8 @@ proc queryTypeCell(fld : var FIELD) =
       of TKey.Enter :
         restorePanel(detail,Xcombo)
         fld.text  = $val[0]
+        if Dsfile.form == "combo":
+          if $val[0] == "SWITCH" or $val[0] == "PASSWORD" : fld.text  = "TEXT_FREE"
         break
       else: discard
 
@@ -291,13 +297,14 @@ proc callSfile(sfl : seq[GSFILE]; namePanel: string; crtsfl : bool) : int =
   var g_pos : int = -1
   var Xcombo  = newGRID("COMBO24",1,1,20,sepStyle)
   var g_id    = defCell("ID",3,DIGIT)
-  var g_name  = defCell("Name",10,TEXT_FREE,cellYellow)
+  var g_name  = defCell("Name",15,TEXT_FREE,cellYellow)
   setHeaders(Xcombo, @[g_id, g_name])
 
   var g_numID = 0
   for i in 0..len(sfl )-1:
+    var gindex = setID(g_numID)
     if sfl[i].panel == namePanel :
-      addRows(Xcombo, @[setID(g_numID), sfl[i].name] )
+      addRows(Xcombo, @[gindex, sfl[i].name] )
 
   if crtsfl : addRows(Xcombo, @["999", "Add", "SFILE"])
 
@@ -321,10 +328,10 @@ proc ViewCellSfile(nitem : seq[CELL_Sfile]) =
   var Xgrid  = newGRID("CELLCOMBO",1,1,5,sepStyle)
 
   var g_id    = defCell("ID",3,DIGIT)
-  var g_text  = defCell("Text",10,TEXT_FREE)
+  var g_text  = defCell("Text",15,TEXT_FREE)
   var g_len   = defCell("len",3 ,DIGIT)
-  var g_type  = defCell("type",10 ,DIGIT)
-  var g_color = defCell("color",6 ,TEXT_FREE)
+  var g_type  = defCell("type",14 ,TEXT_FREE)
+  var g_color = defCell("color",7 ,TEXT_FREE)
 
   setHeaders(Xgrid, @[g_id, g_text, g_len, g_type, g_color])
 
@@ -364,9 +371,9 @@ proc ViewCellSfile(nitem : seq[CELL_Sfile]) =
 
 proc rmvGrid (namePanel: string)=
   var g_pos : int = -1
-  var Xcombo  = newGRID("COMBO24",1,1,20,sepStyle)
+  var Xcombo  = newGRID("COMBO24",2,2,20,sepStyle)
   var g_id    = defCell("ID",3,DIGIT)
-  var g_name  = defCell("Name",10,TEXT_FREE,cellYellow)
+  var g_name  = defCell("Name",15,TEXT_FREE,cellYellow)
   var g_row   = defCell("row",3,DIGIT)
 
   var index : int # table grid
@@ -397,13 +404,13 @@ proc rmvGrid (namePanel: string)=
 
 proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
 
-  var Xgrid  = newGRID("GRIDCOMBO",1,1,30,sepStyle)
+  var Xgrid  = newGRID("GRIDCOMBO",2,2,20,sepStyle)
 
   var g_id    = defCell("ID",3,DIGIT)
-  var g_text  = defCell("Text",10,TEXT_FREE)
+  var g_text  = defCell("Text",15,TEXT_FREE)
   var g_len   = defCell("len",2 ,DIGIT)
-  var g_type  = defCell("type",10 ,DIGIT)
-  var g_color = defCell("color",6 ,TEXT_FREE)
+  var g_type  = defCell("type",14 ,TEXT_FREE)
+  var g_color = defCell("color",7 ,TEXT_FREE)
 
   setHeaders(Xgrid, @[g_id, g_text, g_len, g_type, g_color])
 
@@ -426,7 +433,7 @@ proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
                 else :
                   Dsfile.citem.delete(i)
           break
-      Xgrid  = newGrid("GRIDCOMBO",1,1,30)
+      Xgrid  = newGrid("GRIDCOMBO",1,1,20)
       setHeaders(Xgrid, @[g_id, g_text, g_len, g_type, g_color])
 
       for i in 0..len(nitem)-1:
@@ -446,7 +453,7 @@ proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
 
 proc ViewSfile() =
   var g_pos : int = -1
-  var Xgrid = newGRID(Dsfile.name,Dsfile.posx,Dsfile.posy,Dsfile.nrow,toRefStyle(Dsfile.sep))
+  var Xgrid = newGRID(Dsfile.name,2,2,Dsfile.nrow,toRefStyle(Dsfile.sep))
 
   var cellColonne:seq[CELL]
   var cellRows:seq[string]
@@ -457,7 +464,7 @@ proc ViewSfile() =
     if Dsfile.defcell[n].edtcar > "" : setCellEditCar(cellColonne[n],Dsfile.defcell[n].edtcar)
 
   setHeaders(Xgrid,cellColonne)
-  printGridHeader(Xgrid)
+
 
   for n in 0..len(Dsfile.defcell)-1:
     if Dsfile.form == "grid" :
@@ -481,6 +488,12 @@ proc ViewSfile() =
           for i in 0..Dsfile.defcell[n].long-4 : cellString &= "7"
           cellString = cellString & "."
           cellString = cellString & "7"
+          cellRows.add(cellString)
+        of PASSWORD :
+          for i in 0..Dsfile.defcell[n].long-1 : cellString &= "*"
+          cellRows.add(cellString)
+        of SWITCH :
+          cellString = "◉"
           cellRows.add(cellString)
         else :
           for i in 0..Dsfile.defcell[n].long-1 : cellString &= "A"
@@ -512,7 +525,7 @@ proc ViewSfile() =
 
 #===================================================
 proc WorkItem() =
-  var XGridItem = newGRID(Dsfile.name,Dsfile.posx,Dsfile.posy,Dsfile.nrow,toRefStyle(Dsfile.sep))
+  var XGridItem = newGRID(Dsfile.name,2,2,Dsfile.nrow,toRefStyle(Dsfile.sep))
 
   var cellColonne:seq[CELL]
   var cellRows:seq[string]
@@ -535,7 +548,7 @@ proc WorkItem() =
   printGridRows(XGridItem)
 
 
-  var XItem :PANEL = newPanel("ITEM",Dsfile.posx + 2,Dsfile.posy,4,gridlen,@[defButton(TKey.F9,"Add",true),defButton(TKey.Escape,"")],line1)
+  var XItem :PANEL = newPanel("ITEM",3,2,4,gridlen,@[defButton(TKey.F9,"Add",true),defButton(TKey.Escape,"")],line1)
 
   # FIELD -> CELL
   var ypos = 2
@@ -648,7 +661,6 @@ proc gridDef(Tpanel:string)=
             of TKey.PROC:
               if isProcess(SpnlSfile,Index(SpnlSfile)) :
                 callQuery[getProcess(SpnlSfile,Index(SpnlSfile))] (SpnlSfile.field[Index(SpnlSfile)])
-              #printPanel(detail)
               printPanel(SpnlSfile)
 
             of TKey.F9 :
@@ -710,7 +722,7 @@ proc gridDef(Tpanel:string)=
         if Dsfile.form == "combo" and Dsfile.defcell.len > 0 :
           WorkItem()
 
-      of TKey.altP:
+      of TKey.altD:
         if   Dsfile.defcell.len > 0 :
           ViewCellSfile(Dsfile.defcell)
 
@@ -718,7 +730,7 @@ proc gridDef(Tpanel:string)=
         if Dsfile.defcell.len > 0 :
           RmvCellSfile(Dsfile.defcell)
 
-      of TKey.altD:
+      of TKey.altP:
         if   Dsfile.defcell.len > 0 :
           ViewSfile()
 

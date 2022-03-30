@@ -43,7 +43,7 @@ var pnFa :PANEL = newPanel("pnFx",1,1,14,70,@[defButton(TKey.F9,"F9 Enrg.",true)
 
 pnFa.label.add(defLabel($Fname, 2, 2, "Name.....:"))
 pnFa.field.add(defString($Fname, 2, 2 + len(pnFa.label[F_F1[Fname,]].text), ALPHA_NUMERIC ,
-                10, "", FILL, "Value Obligatoire [A-z0-9]","Name Label","^[A-z]{1,1}([A-z0-9]{1,9})$"))
+                15, "", FILL, "Value Obligatoire [A-z0-9]","Name Label","^[A-z]{1,1}([A-z0-9]{1,9})$"))
 
 pnFa.label.add(defLabel($Fposx, 3, 2, "PosX.....:"))
 pnFa.field.add(defNumeric($Fposx , 3, 2 + len(pnFa.label[F_F1[Fposx]].text), DIGIT ,
@@ -92,7 +92,7 @@ pnFa.field.add(defSwitch($Fprotect , 10, 40 + len(pnFa.label[F_F1[Fprotect]].tex
 
 pnFa.label.add(defLabel($Fprocess, 11, 40, "Process..:"))
 pnFa.field.add(defString($Fprocess , 11, 40 + len(pnFa.label[F_F1[Fprocess]].text), ALPHA_NUMERIC ,
-  20, "", FILL, "Value Obligatoire [A-z0-9]","Name Process","^[A-z]{1,1}([A-z0-9]{1,19})$"))
+  15, "", FILL, "Value Obligatoire [A-z0-9]","Name Process","^[A-z]{1,1}([A-z0-9]{1,19})$"))
 
 
 
@@ -372,10 +372,10 @@ proc orderField()=
   printPanel(orderZ)
   offMouse()
 
-  Zgrid  = newGrid("GRID01",2,2,30)
-  Zdup   = newGrid("GRID02",2,70,30)
+  Zgrid  = newGrid("GRID01",2,2,20)
+  Zdup   = newGrid("GRID02",2,70,20)
   var g_id      = defCell("ID",3,DIGIT)
-  var g_name    = defCell("Name",10,ALPHA,cellYellow)
+  var g_name    = defCell("Name",15,ALPHA,cellYellow)
   var g_posx    = defCell("PosX",4,DIGIT)
   var g_posy    = defCell("PosY",4,DIGIT)
   var g_type    = defCell("Type",19,ALPHA)
@@ -507,8 +507,8 @@ proc orderField()=
               if fldF.protect : setProtect(base[PanelWork],getIndex(base[PanelWork],fldF.name),true)
               else :setProtect(base[PanelWork],getIndex(base[PanelWork],fldF.name),false)
 
-        Zgrid  = newGrid("GRID01",2,2,30)
-        Zdup   = newGrid("GRID02",2,70,30)
+        Zgrid  = newGrid("GRID01",2,2,20)
+        Zdup   = newGrid("GRID02",2,70,20)
         setHeaders(Zgrid, @[g_id, g_name, g_posx, g_posy, g_type])
         setHeaders(Zdup,  @[g_id, g_name, g_posx, g_posy, g_type])
         g_numID = - 1
@@ -528,9 +528,9 @@ proc rmvField()=
   printPanel(orderZ)
   offMouse()
 
-  Zgrid  = newGrid("GRID01",2,2,30)
+  Zgrid  = newGrid("GRID01",2,2,20)
   var g_id      = defCell("ID",3,DIGIT)
-  var g_name    = defCell("Name",10,ALPHA,cellYellow)
+  var g_name    = defCell("Name",15,ALPHA,cellYellow)
   var g_posx    = defCell("PosX",4,DIGIT)
   var g_posy    = defCell("PosY",4,DIGIT) ;
   var g_type    = defCell("Type",19,ALPHA)

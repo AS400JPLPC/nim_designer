@@ -2,16 +2,15 @@
 
 dépendance : **Termkey Termcurs**
 
-# dépôt Testing 2022-03-21   11h55
+# Testing 2022-03-21   11h55
 
-* change procSDA  2022-03-29 optimization grid / combo last update
-* update reademe  2022-03-27
+* change FULL 2022-03-30 23h15  voir "Issues" du 2022-03-30
 
 ---
 
 # but:
 
-Soulager la compréhension par la visualisation des Formulaires puis de générer le code.
+Soulager la compréhention par la visualisation des Formulaires puis de générer le code.
 
 Créer des programmes en pure NIM,sans lib externe et occupant peu de place mémoire.
 
@@ -72,22 +71,23 @@ si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 | Name        | Obligatoire, le référencement et le panel sont lier voir exemple dans le source |
 | PosX,Y      | récupération du positionement de la souris                                      |
 | Heights     | nombre de lignes verticales                                                       |
-| Width       | nombre de caractères horizontaux                                                 |
+| Width       | nombre de caractères horizontals                                                 |
 | Cadre       | appuyer sur une touche, le choix apparaît ---- combo: ligne = 1 ligne =2         |
 | Title       | Titre du panel                                                                    |
-| F1..F24     | appuyer sur la bar d'espacemant pour activé/désactivé la fonction              |
+| F1..F24     | appuyer sur la bar d'espacemant pour activé la fonction                          |
 | Check Field | associer le controle par défault des zones comprise dans le panel                |
 
 ![](assets/20220315_033957_ecr02_02.png)
 
 > *F3* n'a pas besoin de crontôle ex: = exit programe
 >
-> *F9 F10* on besoin de faire le contrôle de cohérence des données saisie
+> *F9 F11* on besoin de faire le contrôle car les données ont des conséquences
+>
 > vous pouvez dans le source affecter à la main d'autre valeur  ex CtrlV
 >
-> leurs donner un texte plus explicite ex F9 = F9 Enrg.
+> leurs donner un text plus explicite ex F9 = F9 Enrg.
 >
-> si vous ne mettez pas de texte la fonction n'est pas visible à l'écran mais active
+> si vous ne mettez pas de text la fonction n'est pas visible à l'écran mais active
 >
 > ne pas ce servir CrtlH qui est réserver à la saisie.
 >
@@ -102,21 +102,21 @@ si il y a une erreur de saisie appuyez sur la touche "Escape" pour corriger
 pointer la souris pour positioner l'objet que vous voulez décrire.
 
 
-| key   | Fonction                                       |
-| ------- | ------------------------------------------------ |
-| AltL  | Label:  tapez votre label à validé par CtrlV |
-| AltT  | Titre:  idem label                             |
-| AltF  | Field:                                         |
-| AltM  | Menu:                                          |
-| AltP  | display de tous les  menus                     |
-| AltG  | Combo/Grid                                     |
-| AltD  | affichage des objet Label Field Menu           |
-| AltO  | réordonner les objet Label Field              |
-| AltR  | remove les objet Label Field Menu Combo/Grid   |
-| AltS  | réaffichage du terminal                       |
-| CtrlQ | fermeture du panel retour au menu principal    |
-|       |                                                |
-| CtrlH | réserver à la saisie pour Help field         |
+| key   | Fonction                                            |
+| ------- | ----------------------------------------------------- |
+| AltL  | Label  puis tapez votre label CtrlV valide le label |
+| AltT  | Titre  idem label                                   |
+| AltF  | Field                                               |
+| AltM  | Menu                                                |
+| AltP  | display de tous les  menus                          |
+| AltG  | Combo/Grid                                          |
+| AltD  | affichage des objet Label Field Menu                |
+| AltO  | réordonner les objet Label Field                   |
+| AltR  | remove les objet Label Field Menu Combo/Grid        |
+| AltS  | réaffichage du terminal                            |
+| CtrlQ | fermeture du panel retour au menu principal         |
+|       |                                                     |
+| CtrlH | réserver à la saisie pour Help field              |
 
 ---
 
@@ -265,11 +265,11 @@ exemple:
 
 ![](assets/20220320_233406_ecr03_50png)
 
-dans la sous directory ./dspf
+dans la sous directorie ./dspf
 
 "name.dspf" Génère un fichier json
 
-dans la directory du programme TermSDA  "Source.nim" que vous pouvez compiler
+dans la directorie du programme TermSDA  "Source.nim" que vous pouvez compiler
 
 ---
 
