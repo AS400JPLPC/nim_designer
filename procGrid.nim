@@ -373,30 +373,21 @@ proc rmvGrid (namePanel: string)=
   var g_pos : int = -1
   var Xcombo  = newGRID("COMBO24",2,2,20,sepStyle)
   var g_id    = defCell("ID",3,DIGIT)
+  var g_panel = defCell("panel",15,TEXT_FREE,cellYellow)
   var g_name  = defCell("Name",15,TEXT_FREE,cellYellow)
   var g_row   = defCell("row",3,DIGIT)
-
-  var index : int # table grid
-  setHeaders(Xcombo, @[g_id, g_name,g_row])
-
-  var g_numID = 0
-  for i in 0..len(NSFILE)-1:
-    if NSFILE[i].panel == namePanel :
-      addRows(Xcombo, @[setID(g_numID),NSFILE[i].name,$i] )
-
-
+  setHeaders(Xcombo, @[g_id,  g_panel, g_name, g_row])
   while true :
+    resetRows(Xcombo)
+    for i in 0..len(NSFILE )-1:
+      if NSFILE[i].panel == namePanel :
+        addRows(Xcombo, @[$i, NSFILE[i].panel,NSFILE[i].name, $NSFILE[i].nrow ] )
+
     let (keys, val) = ioGrid(Xcombo,g_pos)
     case keys
       of TKey.Enter :
-        index = parseInt($val[2])
-        NSFILE.delete(index)
-        index = parseInt($val[0])
-        Xcombo.dltRows(index)
-      of TKey.Escape :
-        setTerminal()         # specifique grid > panel
-        printPanel(detail)
-        break
+        NSFILE.delete(parseInt($val[0]))
+      of TKey.Escape : return
       else: discard
 
 #===================================================

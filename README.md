@@ -5,7 +5,7 @@ dépendance : **Termkey Termcurs**
 # Testing 2022-03-21   11h55
 
 * change FULL 2022-03-30 23h15  voir "Issues" du 2022-03-30
-
+* change Remove GRID 2022-03-31 2h44
 ---
 
 # but:
