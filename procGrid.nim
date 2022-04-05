@@ -444,7 +444,7 @@ proc RmvCellSfile(nitem : var seq[CELL_Sfile]) =
 
 proc ViewSfile() =
   var g_pos : int = -1
-  var Xgrid = newGRID(Dsfile.name,2,2,Dsfile.nrow,toRefStyle(Dsfile.sep))
+  var Xgrid = newGRID(Dsfile.name,Dsfile.posx,Dsfile.posy,Dsfile.nrow,toRefStyle(Dsfile.sep))
 
   var cellColonne:seq[CELL]
   var cellRows:seq[string]
@@ -539,7 +539,7 @@ proc WorkItem() =
   printGridRows(XGridItem)
 
 
-  var XItem :PANEL = newPanel("ITEM",3,2,4,gridlen,@[defButton(TKey.F9,"Add",true),defButton(TKey.Escape,"")],line1)
+  var XItem :PANEL = newPanel("ITEM",4,2,4,gridlen,@[defButton(TKey.F9,"Add",true),defButton(TKey.Escape,"")],line1)
 
   # FIELD -> CELL
   var ypos = 2

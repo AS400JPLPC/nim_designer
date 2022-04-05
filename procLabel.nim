@@ -251,8 +251,8 @@ proc orderLabel()=
             detail.label.add(defTitle(getrowName(Zdup,n), getrowPosx(Zdup,n), getrowPosy(Zdup,n), getrowText(Zdup,n)))
             base[PanelWork].label.add(  defTitle(getrowName(Zdup,n), getrowPosx(Zdup,n), getrowPosy(Zdup,n), getrowText(Zdup,n)))
 
-        Zgrid  = newGrid("GRID01",2,2,30)
-        Zdup   = newGrid("GRID02",2,65,30)
+        Zgrid  = newGrid("GRID01",2,2,20)
+        Zdup   = newGrid("GRID02",2,65,20)
         setHeaders(Zgrid, @[g_id, g_name, g_posx, g_posy, g_txt, g_title])
         setHeaders(Zdup,  @[g_id, g_name, g_posx, g_posy, g_txt, g_title])
         printGridHeader(Zdup)

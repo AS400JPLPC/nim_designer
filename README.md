@@ -6,6 +6,7 @@ dépendance : **Termkey Termcurs**
 
 * change FULL 2022-03-30 23h15  voir "Issues" du 2022-03-30
 * change Remove GRID 2022-03-31 2h44
+* change position posx posy rown grig 2022-04-05 16h27
 ---
 
 # but:
