@@ -207,13 +207,14 @@ proc main() =
   setActif(fecr01.button[P1B[B1F9]],false)    # add enrg
   setActif(fecr01.button[P1B[B1F10]],false)  # add enrg
   setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
-  #Exemple ------
+  #Exemple ------ :
   while true:
     printPanel(fecr01)
     displayPanel(fecr01)
     if countRows(GSFL01) > 0 :
       printGridHeader(GSFL01)
-      setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0))
+      if getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0) > 0 :
+        setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0))
       printGridRows(GSFL01)
     let  key01 = ioPanel(fecr01)
     case key01

@@ -139,7 +139,8 @@ proc main() =
     displayPanel(fecr01)
     if countRows(GSFL01) > 0 :
       printGridHeader(GSFL01)
-      setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0))
+      if getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0) > 0 :
+        setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0))
       printGridRows(GSFL01)
     var key01 = ioPanel(fecr01)
     case key01
