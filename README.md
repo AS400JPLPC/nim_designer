@@ -1,4 +1,4 @@
-# Designer
+# Designer TUI
 
 dépendance : **Termkey Termcurs**
 
@@ -7,6 +7,8 @@ dépendance : **Termkey Termcurs**
 * change FULL 2022-03-30 23h15  voir "Issues" du 2022-03-30
 * change Remove GRID 2022-03-31 2h44
 * change position posx posy rown grig 2022-04-05 16h27
+* change procurs setPageGrid calcul nbr page  and isPanelkey test button actif 202-04-07 15h40
+
 ---
 
 # but:
@@ -429,3 +431,8 @@ proc main() =
 main()
 
 ```
+
+Projet Contact: exemple
+
+
+![](assets/20220407_160644_prrojetExemple.png)
