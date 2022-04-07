@@ -8,6 +8,7 @@ dépendance : **Termkey Termcurs**
 * change Remove GRID 2022-03-31 2h44
 * change position posx posy rown grig 2022-04-05 16h27
 * change procurs setPageGrid calcul nbr page  and isPanelkey test button actif 202-04-07 15h40
+* update TERMCURS 2022-03-07
 
 ---
 
