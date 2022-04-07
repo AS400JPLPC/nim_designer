@@ -1,0 +1,152 @@
+{
+  "titleTerm": "PRODESSIONEL",
+  "fileTerm": "tblprof.dspf",
+  "panel": [
+    {
+      "name": "Fprof01",
+      "posx": 1,
+      "posy": 1,
+      "height": 20,
+      "width": 44,
+      "cadre": "line2",
+      "title": "Profession",
+      "button": [
+        {
+          "Tkey": "F2",
+          "txtKey": "F2",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F3",
+          "txtKey": "F3",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F9",
+          "txtKey": "F9",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F10",
+          "txtKey": "F10",
+          "ctrl": true,
+          "actif": true
+        },
+        {
+          "Tkey": "F23",
+          "txtKey": "F23",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [
+        {
+          "defLabel": "label",
+          "name": "L02002",
+          "posx": 2,
+          "posy": 2,
+          "text": "F2:Table"
+        }
+      ],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "CPROF",
+          "posx": 3,
+          "posy": 12,
+          "reftype": "TEXT_FREE",
+          "width": 20,
+          "empty": false,
+          "errmsg": "Obligatoire",
+          "help": "Profession",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        },
+        {
+          "defFld": "defSwitch",
+          "name": "HS",
+          "posx": 3,
+          "posy": 33,
+          "reftype": "SWITCH",
+          "switch": false,
+          "empty": true,
+          "errmsg": "",
+          "help": "HS ON/OFF",
+          "text": "",
+          "EdtCar": "",
+          "Protect": false,
+          "Process": ""
+        }
+      ]
+    },
+    {
+      "name": "fecrMsg",
+      "posx": 1,
+      "posy": 1,
+      "height": 4,
+      "width": 50,
+      "cadre": "line1",
+      "title": "Message error",
+      "button": [
+        {
+          "Tkey": "F1",
+          "txtKey": "F1",
+          "ctrl": false,
+          "actif": true
+        }
+      ],
+      "label": [],
+      "field": [
+        {
+          "defFld": "defString",
+          "name": "ERRMSG",
+          "posx": 2,
+          "posy": 2,
+          "reftype": "TEXT_FREE",
+          "width": 48,
+          "empty": true,
+          "errmsg": "",
+          "help": "",
+          "text": "",
+          "EdtCar": "",
+          "Protect": true,
+          "Process": ""
+        }
+      ]
+    }
+  ],
+  "menu": [],
+  "sfile": [
+    {
+      "name": "SFL01",
+      "panel": "Fprof01",
+      "form": "grid",
+      "posx": 4,
+      "posy": 11,
+      "nrow": 12,
+      "sep": "sepStyle",
+      "cell": [
+        {
+          "colonne": "Profession",
+          "long": 20,
+          "reftyp": "TEXT_FREE",
+          "cellatr": "Cyan",
+          "edtcar": ""
+        },
+        {
+          "colonne": "HS",
+          "long": 1,
+          "reftyp": "SWITCH",
+          "cellatr": "White",
+          "edtcar": ""
+        }
+      ],
+      "item": []
+    }
+  ]
+}
