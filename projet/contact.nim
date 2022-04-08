@@ -24,14 +24,15 @@ type
     STEL,
     SRELATION
   BUTTON_fecr01 {.pure.} = enum
-    B1F2,
     B1F3,
+    B1F5,
+    B1F7,
     B1F9,
     B1F10,
     B1F23
 const P1L: array[LABEL_fecr01, int] = [0]
 const P1 : array[FIELD_fecr01, int] = [0,1,2,3,4,5]
-const P1B: array[BUTTON_fecr01, int] = [0,1,2,3,4]
+const P1B: array[BUTTON_fecr01, int] = [0,1,2,3,4,5]
 
 type
   FIELD_fecr02 {.pure.}= enum
@@ -83,14 +84,14 @@ proc pFECR02(key: TKey) : Tkey
 #===================================================
 
 proc setColumnSFL01() =
-  clearDep()
+  clearAdr()
   var columns: DbColumns
   var requette : string
   resetRows(GSFL01)
   if getText(fecr01,P1[SNAME]) == "" :
-    requette = "SELECT CID, NOM, PRENOM, TEL, RELATION FROM FCONTACT ORDER BY CPAYS, CID ;"
+    requette = "SELECT CID, NOM, PRENOM, TEL, RELATION , LPAYS FROM FCONTACT ORDER BY CPAYS, NOM, CID ;"
   else :
-    requette = fmt"SELECT CID, NOM, PRENOM, TEL, RELATION FROM FCONTACT WHERE  NOM LIKE '%{getText(fecr01,P1[SNAME])}%' ORDER BY CPAYS , CID ;"
+    requette = fmt"SELECT CID, NOM, PRENOM, TEL, RELATION , LPAYS FROM FCONTACT WHERE  NOM LIKE '%{getText(fecr01,P1[SNAME])}%' ORDER BY CPAYS , NOM, CID ;"
   for rown in dbtb.instantRows(columns,sql $requette):
     for x in 0..(rown.len - 1) :
       case columns[x].name
@@ -99,8 +100,9 @@ proc setColumnSFL01() =
         of "PRENOM"       :    Adr.PRENOM     = rown[x]
         of "TEL"          :    Adr.TEL        = rown[x]
         of "RELATION"     :    Adr.RELATION   = rown[x]
+        of "LPAYS"        :    Adr.LPAYS      = rown[x]
         else: discard
-    addRows(GSFL01, @[  $Adr.CID, Adr.NOM, Adr.PRENOM, Adr.TEL, Adr.RELATION ])
+    addRows(GSFL01, @[  $Adr.CID, Adr.NOM, Adr.PRENOM, Adr.TEL, Adr.RELATION , Adr.LPAYS])
 
 proc main() =
   initTerm(32,132,"TERMINAL-contact")
@@ -129,73 +131,58 @@ proc main() =
 
   dscfecr01()
   defSFL01() # init sfl01
-
+  var pkey : TKey = TKey.None # return key proc
+  var idx : int
   #Exemple ------
-  setActif(fecr01.button[P1B[B1F9]],false)   # add enrg
-  setActif(fecr01.button[P1B[B1F10]],false)  # upd enrg
-  setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
+  setColumnSFL01()
   while true:
+    idx = -1
+
+    # loading buffer display
     printPanel(fecr01)
     displayPanel(fecr01)
+
+    # Reposition in the page of the subfile (grid)
     if countRows(GSFL01) > 0 :
-      printGridHeader(GSFL01)
       if getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0) > 0 :
-        setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0))
-      printGridRows(GSFL01)
-    var key01 = ioPanel(fecr01)
+        idx = getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0)
+
+    # management of the panel with its fields and control of the Gridsfl
+    let (key01, val) = ioFMT(fecr01,GSFL01, true, idx)
     case key01
-      of TKey.PROC :  # for field Process
-        if isProcess(fecr01,Index(fecr01)):
-          callQuery[getProcess(fecr01,Index(fecr01))](fecr01.field[Index(fecr01)])
-
-      of Tkey.F2:
-        # change value label
-        setTextL(fecr01,P1L[Lgrid], "Pos   ")
-        displayLabel(fecr01,fecr01.label[P1L[Lgrid]])
-        setColumnSFL01()
-        # work grid
-        let (keys, val) = ioGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0))
-
-        if keys == TKey.Enter :
-          setActif(fecr01.button[P1B[B1F9]],false)  # add enrg
-          setActif(fecr01.button[P1B[B1F10]],true)  # upd enrg
-          setActif(fecr01.button[P1B[B1F23]],true)  # del enrg
-          setText(fecr01,P1[SINDEX]   ,val[0])
-          setText(fecr01,P1[SNOM]     ,val[1])
-          setText(fecr01,P1[SPRENOM]  ,val[2])
-          setText(fecr01,P1[STEL]     ,val[3])
-          setTextL(fecr01,P1L[Lgrid] , "select")
-
-        elif keys == TKey.Escape:
-          setText(fecr01,P1[SINDEX]   ,"")
-          setText(fecr01,P1[SNOM]     ,"")
-          setText(fecr01,P1[SPRENOM]  ,"")
-          setText(fecr01,P1[STEL]     ,"")
-          setTextL(fecr01,P1L[Lgrid] ,"      ")
-          setActif(fecr01.button[P1B[B1F9]],true)  # add enrg
-          setActif(fecr01.button[P1B[B1F10]],false)  # upd enrg
-          setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
-          resetRows(GSFL01)
-
 
       of TKey.F3:
         break
 
+
+      # for field Process Combo display and selection
+      of TKey.PROC :
+        if isProcess(fecr01,Index(fecr01)):
+          callQuery[getProcess(fecr01,Index(fecr01))](fecr01.field[Index(fecr01)])
+
+      # In ioFMT processing retrieving values (subfile line) this done with TKey.Mouse
+      of TKey.Mouse :
+          setText(fecr01,P1[SINDEX]   ,val[0])
+          setText(fecr01,P1[SNOM]     ,val[1])
+          setText(fecr01,P1[SPRENOM]  ,val[2])
+          setText(fecr01,P1[STEL]     ,val[3])
+
+      # refresh flied
+      of TKey.F5:
+          setText(fecr01,P1[SINDEX]   ,"")
+          setText(fecr01,P1[SNOM]     ,"")
+          setText(fecr01,P1[SPRENOM]  ,"")
+          setText(fecr01,P1[STEL]     ,"")
+
+      # Forces the display with selection on the sql LIKE name
+      of TKey.F7:
+         setColumnSFL01()
+
+      # Add record processing
       of TKey.F9:
         clearAdr()
-        key01 = pFECR02(key01)
+        pkey = pFECR02(key01)
         if Adr.CID == 0 :
-          setText(fecr01,P1[SINDEX]   ,"")
-          setText(fecr01,P1[SNOM]     ,Adr.NOM)
-          setText(fecr01,P1[SPRENOM]  ,Adr.PRENOM)
-          setText(fecr01,P1[STEL]     ,Adr.TEL)
-          setTextL(fecr01,P1L[Lgrid] ,"......")
-          setColumnSFL01()
-
-      of TKey.F10:
-        if Adr.CID != 0 :
-          discard readAdr(db,$fmt"SELECT * FROM FCONTACT WHERE CID = '{getText(fecr01,P1[SINDEX])}';")
-          key01 = pFECR02(key01)
           setText(fecr01,P1[SINDEX]   ,$Adr.CID)
           setText(fecr01,P1[SNOM]     ,Adr.NOM)
           setText(fecr01,P1[SPRENOM]  ,Adr.PRENOM)
@@ -203,14 +190,29 @@ proc main() =
           setTextL(fecr01,P1L[Lgrid] ,"......")
           setColumnSFL01()
 
+      # Update record processing
+      of TKey.F10:
+        if Adr.CID != 0 :
+          discard readAdr(db,$fmt"SELECT * FROM FCONTACT WHERE CID = '{getText(fecr01,P1[SINDEX])}';")
+          pkey = pFECR02(key01)
+          setText(fecr01,P1[SINDEX]   ,$Adr.CID)
+          setText(fecr01,P1[SNOM]     ,Adr.NOM)
+          setText(fecr01,P1[SPRENOM]  ,Adr.PRENOM)
+          setText(fecr01,P1[STEL]     ,Adr.TEL)
+          setTextL(fecr01,P1L[Lgrid] ,"......")
+          setColumnSFL01()
+
+
+      # delete record processing
       of TKey.F23:
         if Adr.CID != 0 :
           discard readAdr(db,$fmt"SELECT * FROM FCONTACT WHERE CID = '{Adr.CID}';")
-          key01 = pFECR02(key01)
+          pkey = pFECR02(key01)
           setColumnSFL01()
       else : discard
 
-    if TKey.F3 == key01 :
+    # exit programme
+    if TKey.F3 == key01 or TKey.F3 == pkey :
       closeTerm()
       return
 
@@ -309,6 +311,7 @@ proc pFECR02(key : TKey) : (TKey) =
         db.exec(sql"COMMIT")
         clearText(fecr02)
 
+
       of TKey.F10:
         Adr.CID    = parseInt(getText(fecr02,P2[CID]))
         Adr.NOM         = getText(fecr02,P2[NOM])
@@ -337,11 +340,14 @@ proc pFECR02(key : TKey) : (TKey) =
         db.exec(sql"COMMIT")
         clearText(fecr02)
 
+
       of TKey.F23:
         Adr.CID    = parseInt(getText(fecr02,P2[CID]))
         db.exec(sql"BEGIN")
         deleteAdr(db)
         db.exec(sql"COMMIT")
+        clearText(fecr02)
+
 
       of TKey.F12:
         clearText(fecr02)
@@ -349,7 +355,7 @@ proc pFECR02(key : TKey) : (TKey) =
       else: discard
 
     if TKey.F3 == key02 or TKey.F9 == key02 or TKey.F10 == key02 or TKey.F12 == key02 or TKey.F23 == key02:
-      setActif(fecr01.button[P1B[B1F9]],false)  # add enrg
-      setActif(fecr01.button[P1B[B1F10]],false)  # upd enrg
-      setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
+      setActif(fecr01.button[P1B[B1F9]],true)  # add enrg
+      setActif(fecr01.button[P1B[B1F10]],true)  # upd enrg
+      setActif(fecr01.button[P1B[B1F23]],true)  # del enrg
       return key02

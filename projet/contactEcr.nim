@@ -4,11 +4,10 @@ var fecr01= new(PANEL)
 
 # description
 proc dscfecr01() =
-  fecr01 = newPanel("fecr01",1,1,32,132,@[defButton(TKey.F2,"Select",false,true),defButton(TKey.F3,"Exit",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F23,"Delete",false,true)],line1,"CONTACT")
+  fecr01 = newPanel("fecr01",1,1,32,132,@[defButton(TKey.F3,"Exit",false,true), defButton(TKey.F5,"Refresh",false,true), defButton(TKey.F7,"Select",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F23,"Delete",false,true)],line1,"CONTACT")
 
     # LABEL  -> fecr01
 
-  fecr01.label.add(deflabel("L02002", 2, 2, "......"))
   fecr01.label.add(deflabel("L02070", 2, 85, "Nom.:"))
 
   # FIELD -> fecr01
@@ -35,7 +34,8 @@ proc defSFL01() =
   var Cell_PRENOM = defCell("PRENOM",30,TEXT_FREE,"Green")
   var Cell_TEL = defCell("TEL",15,TEXT_FREE,"White")
   var Cell_RELATION = defCell("RELATION",15,TEXT_FREE,"Yellow")
-  setHeaders(GSFL01, @[Cell_INDEX ,Cell_NAME ,Cell_PRENOM ,Cell_TEL ,Cell_RELATION])
+  var Cell_PAYS = defCell("PAYS",15,TEXT_FREE,"Yellow")
+  setHeaders(GSFL01, @[Cell_INDEX ,Cell_NAME ,Cell_PRENOM ,Cell_TEL ,Cell_RELATION,Cell_PAYS])
 #===================================================
 
 
@@ -49,7 +49,7 @@ var fecr02= new(PANEL)
 
 # description
 proc dscfecr02() =
-  fecr02 = newPanel("fecr02",1,1,32,132,@[defButton(TKey.F3,"EXIT",false,true), defButton(TKey.F4,"F4",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F12,"Return",false,true), defButton(TKey.F23,"Delete",false,true)],line1,"Saisie CONTACT")
+  fecr02 = newPanel("fecr02",1,1,32,132,@[defButton(TKey.F3,"EXIT",false,true), defButton(TKey.F4,"Tbl-Profesion",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F12,"Return",false,true), defButton(TKey.F23,"Delete",false,true)],line1,"Saisie CONTACT")
 
   # LABEL  -> fecr02
 
