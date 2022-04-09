@@ -7,19 +7,19 @@
       "posx": 1,
       "posy": 1,
       "height": 20,
-      "width": 44,
+      "width": 48,
       "cadre": "line2",
       "title": "Profession",
       "button": [
         {
-          "Tkey": "F2",
-          "txtKey": "F2",
+          "Tkey": "F3",
+          "txtKey": "F3",
           "ctrl": false,
           "actif": true
         },
         {
-          "Tkey": "F3",
-          "txtKey": "F3",
+          "Tkey": "F5",
+          "txtKey": "F5",
           "ctrl": false,
           "actif": true
         },
@@ -56,7 +56,7 @@
           "defFld": "defString",
           "name": "CPROF",
           "posx": 3,
-          "posy": 12,
+          "posy": 14,
           "reftype": "TEXT_FREE",
           "width": 20,
           "empty": false,
@@ -71,7 +71,7 @@
           "defFld": "defSwitch",
           "name": "HS",
           "posx": 3,
-          "posy": 33,
+          "posy": 35,
           "reftype": "SWITCH",
           "switch": false,
           "empty": true,
@@ -127,7 +127,7 @@
       "panel": "Fprof01",
       "form": "grid",
       "posx": 4,
-      "posy": 11,
+      "posy": 13,
       "nrow": 12,
       "sep": "sepStyle",
       "cell": [
