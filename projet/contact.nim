@@ -170,6 +170,7 @@ proc main() =
 
       # refresh flied
       of TKey.F5:
+          clearAdr()
           setText(fecr01,P1[SINDEX]   ,"")
           setText(fecr01,P1[SNOM]     ,"")
           setText(fecr01,P1[SPRENOM]  ,"")
@@ -202,7 +203,6 @@ proc main() =
           setText(fecr01,P1[STEL]     ,Adr.TEL)
           setTextL(fecr01,P1L[Lgrid] ,"......")
           setColumnSFL01()
-
 
       # delete record processing
       of TKey.F23:
@@ -354,7 +354,4 @@ proc pFECR02(key : TKey) : (TKey) =
       else: discard
 
     if TKey.F3 == key02 or TKey.F9 == key02 or TKey.F10 == key02 or TKey.F12 == key02 or TKey.F23 == key02:
-      setActif(fecr01.button[P1B[B1F9]],true)  # add enrg
-      setActif(fecr01.button[P1B[B1F10]],true)  # upd enrg
-      setActif(fecr01.button[P1B[B1F23]],true)  # del enrg
       return key02
