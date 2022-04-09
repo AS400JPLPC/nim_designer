@@ -2,14 +2,15 @@
 
 dépendance : **Termkey Termcurs**
 
-# Testing 2022-03-21   11h55
+# Testing 2022-04-09   12h15
 
 * change FULL 2022-03-30 23h15  voir "Issues" du 2022-03-30
 * change Remove GRID 2022-03-31 2h44
 * change position posx posy rown grig 2022-04-05 16h27
 * change procurs setPageGrid calcul nbr page  and isPanelkey test button actif 202-04-07 15h40
 * **update TERMCURS 2022-04-08 TERMKEY 2022-04-08**
-* refonte du "**projet**" prise en compte de la fonction ioFMT(PANEL,GRIDSFL,select,pos(index grid) )
+* **update TERMCURS 2022-04-09**
+* refonte du "**projet**" prise en compte de la fonction ioFMT(PANEL,GRIDSFL,select,pos(index grid) ) et plus
 
 ---
 

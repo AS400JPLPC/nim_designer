@@ -120,7 +120,7 @@ var fecr01= new(PANEL)
 
 # description
 proc dscfecr01() =
-  fecr01 = newPanel("fecr01",1,1,20,44,@[defButton(TKey.F2,"",false,true),defButton(TKey.F3,"Exit",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F23,"Delete",false,true)],line2,"Profession")
+  fecr01 = newPanel("fecr01",1,1,20,54,@[defButton(TKey.F3,"Exit",false,true),defButton(TKey.F5,"clear",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Upd",true,true), defButton(TKey.F23,"Dlt",false,true)],line2,"Profession")
 
   # LABEL  -> fecr01
 
@@ -129,8 +129,8 @@ proc dscfecr01() =
 
   # FIELD -> fecr01
 
-  fecr01.field.add(defString("CPROF", 3, 12, TEXT_FREE,20,"", FILL, "Obligatoire","Profession"))
-  fecr01.field.add(defSwitch("HS", 3, 33, SWITCH, false, EMPTY, "", "HS ON/OFF"))
+  fecr01.field.add(defString("CPROF", 3, 16, TEXT_FREE,20,"", FILL, "Obligatoire","Profession"))
+  fecr01.field.add(defSwitch("HS", 3, 36, SWITCH, false, EMPTY, "", "HS ON/OFF"))
 
 
 
@@ -138,7 +138,7 @@ proc dscfecr01() =
 var GSFL01: GRIDSFL
 #===================================================
 proc defSFL01() =
-  GSFL01  = newGRID("SFL01",4,11,12,sepStyle)
+  GSFL01  = newGRID("SFL01",4,15,12,sepStyle)
   var Cell_Profession = defCell("Profession",20,TEXT_FREE,"Cyan")
   var Cell_HS = defCell("HS",1,SWITCH,"White")
   setHeaders(GSFL01, @[Cell_Profession ,Cell_HS])
@@ -152,7 +152,7 @@ type
 const P2: array[FIELD_fecrMsg, int] = [0]
 
 var fecrMsg= new(PANEL)
-
+var idx : int
 # description
 proc dscfecrMsg() =
   fecrMsg = newPanel("fercMsg",1,1,4,50,@[defButton(TKey.F1,"F1",false,true)],line1,"Message error")
@@ -185,9 +185,18 @@ proc setColumnSFL01() =
     addRows(GSFL01, @[  Prf.CPROFESSION, $Prf.HS ])
 
 
+proc clearEcr() =
+  setActif(fecr01.button[P1B[B1F9]],true)   # add enrg
+  setActif(fecr01.button[P1B[B1F10]],false)  # upd enrg
+  setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
+  setText(fecr01,P1[CPROF]  ,"")
+  setProtect(fecr01,P1[CPROF],false)
+  setSWITCH(fecr01,P1[HS]     ,false)
+  setIndex(fecr01,0)
+
 #===================================================
 proc main() =
-  initTerm(20,44,"TERMINAL-Profession")
+  initTerm(20,54,"TERMINAL-Profession")
   try:
     db    = open("Table.db", "", "", "")
 
@@ -204,39 +213,31 @@ proc main() =
   dscfecr01()
   dscfecrMsg()
   defSFL01() # init sfl01
-  setActif(fecr01.button[P1B[B1F9]],false)    # add enrg
-  setActif(fecr01.button[P1B[B1F10]],false)  # add enrg
-  setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
+  setColumnSFL01()
+  clearEcr()
   #Exemple ------ :
   while true:
-    printPanel(fecr01)
-    displayPanel(fecr01)
+    poster(fecr01)
     if countRows(GSFL01) > 0 :
-      printGridHeader(GSFL01)
       if getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0) > 0 :
-        setPageGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0))
-      printGridRows(GSFL01)
-    let  key01 = ioPanel(fecr01)
+        idx = getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0)
+      else : idx = -1
+    let  (key01, val) = ioFMT(fecr01,GSFL01,true,idx)
     case key01
-      of TKey.F2:
-        setColumnSFL01()
-        let (keys, val) = ioGrid(GSFL01,getIndexG(GSFL01,getText(fecr01,P1[CPROF]),0))
-        if keys == TKey.Enter :
+      of TKey.Mouse :
+          setActif(fecr01.button[P1B[B1F9]],false)   # add enrg
           setActif(fecr01.button[P1B[B1F10]],true)  # add enrg
           setActif(fecr01.button[P1B[B1F23]],true)  # del enrg
           setText(fecr01,P1[CPROF]  ,val[0])
+          setProtect(fecr01,P1[CPROF],true)
           setSWITCH(fecr01,P1[HS]     ,parseBool(val[1]))
-          setActif(fecr01.button[P1B[B1F9]],false)  # add enrg
-        elif keys == TKey.Escape:
-          setActif(fecr01.button[P1B[B1F9]],true)    # add enrg
-          setActif(fecr01.button[P1B[B1F10]],false)  # add enrg
-          setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
-          setText(fecr01,P1[CPROF]  ,"")
-          setSWITCH(fecr01,P1[HS]     ,parseBool("0"))
-          resetRows(GSFL01)
 
       of TKey.F3:
         break
+      of TKey.F5:
+        setActif(fecr01.button[P1B[B1F9]],true)   # add enrg
+        clearEcr()
+
       of TKey.F9:
         if getText(fecr01,P1[CPROF]) > "" :
           Prf.CPROFESSION = getText(fecr01,P1[CPROF])
@@ -245,6 +246,8 @@ proc main() =
           insertPrf(db)
           db.exec(sql"COMMIT")
           setColumnSFL01()
+          clearEcr()
+
 
       of TKey.F10:
         if getText(fecr01,P1[CPROF]) > "" :
@@ -254,6 +257,8 @@ proc main() =
           updatePrf(db)
           db.exec(sql"COMMIT")
           setColumnSFL01()
+          clearEcr()
+
 
       of TKey.F23:
         if getText(fecr01,P1[CPROF]) > "" :
@@ -262,12 +267,10 @@ proc main() =
           deletePrf(db)
           db.exec(sql"COMMIT")
           setColumnSFL01()
+          clearEcr()
+
       else : discard
 
-    if TKey.F9 == key01 or TKey.F10 == key01 or TKey.F23 == key01:
-      setActif(fecr01.button[P1B[B1F9]],false)  # add enrg
-      setActif(fecr01.button[P1B[B1F10]],false)  # upd enrg
-      setActif(fecr01.button[P1B[B1F23]],false)  # del enrg
 
   closeTerm()
 

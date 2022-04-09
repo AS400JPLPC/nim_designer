@@ -111,7 +111,7 @@ var fecr03= new(PANEL)
 
 # description
 proc dscfecr03() =
-  fecr03 = newPanel("fecr03",1,1,4,80,@[defButton(TKey.F2,"Ville",true,true), defButton(TKey.F12,"F12",false,true)],line1,"Commune")
+  fecr03 = newPanel("fecr03",1,1,27,70,@[defButton(TKey.F7,"Ville",true,true)],line1,"Commune")
 
   # LABEL  -> fecr03
 
@@ -120,8 +120,8 @@ proc dscfecr03() =
 
   # FIELD -> fecr03
 
-  fecr03.field.add(defString("CPAYS", 2, 8, TEXT_FREE,3,"", EMPTY, "","Code pays"))
+  fecr03.field.add(defString("CPAYS", 2, 8, TEXT_FREE,3,getText(fecr02,P2[CPAYS]), EMPTY, "","Code pays"))
   setProtect(fecr03.field[P3[CPAYS2]],true)
-  fecr03.field.add(defString("LPAYS", 2, 12, TEXT_FREE,20,"", EMPTY, "","Libellé Pays"))
+  fecr03.field.add(defString("LPAYS", 2, 12, TEXT_FREE,20,getText(fecr02,P2[LPAYS]), EMPTY, "","Libellé Pays"))
   setProtect(fecr03.field[P3[LPAYS2]],true)
   fecr03.field.add(defString("VILLE", 2, 49, TEXT_FREE,20,"", FILL, "Obligatoire","Nom de la ville ou Commune"))

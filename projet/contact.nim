@@ -6,8 +6,8 @@ from strutils import Digits, parseInt
 import strformat
 import osproc
 
-#proc beug(nline : int ; text :string ) =
-  #gotoXY(40, 1); echo "ligne>", nline, " :" , text ; discard getFunc()
+proc beug(nline : int ; text :string ) =
+  gotoXY(40, 1); echo "ligne>", nline, " :" , text ; discard getFunc()
 
 
 include contactSQL
@@ -138,9 +138,9 @@ proc main() =
   while true:
     idx = -1
 
-    # loading buffer display
-    printPanel(fecr01)
-    displayPanel(fecr01)
+    # loading buffer print/display Panel
+    poster(fecr01)
+
 
     # Reposition in the page of the subfile (grid)
     if countRows(GSFL01) > 0 :
@@ -148,6 +148,7 @@ proc main() =
         idx = getIndexG(GSFL01,getText(fecr01,P1[SINDEX]),0)
 
     # management of the panel with its fields and control of the Gridsfl
+    # defaut ioFMT(Panel,Gridsfl) select=false  pos index = -1
     let (key01, val) = ioFMT(fecr01,GSFL01, true, idx)
     case key01
 
@@ -182,7 +183,7 @@ proc main() =
       of TKey.F9:
         clearAdr()
         pkey = pFECR02(key01)
-        if Adr.CID == 0 :
+        if Adr.CID > 0 :
           setText(fecr01,P1[SINDEX]   ,$Adr.CID)
           setText(fecr01,P1[SNOM]     ,Adr.NOM)
           setText(fecr01,P1[SPRENOM]  ,Adr.PRENOM)
@@ -192,7 +193,7 @@ proc main() =
 
       # Update record processing
       of TKey.F10:
-        if Adr.CID != 0 :
+        if Adr.CID > 0 :
           discard readAdr(db,$fmt"SELECT * FROM FCONTACT WHERE CID = '{getText(fecr01,P1[SINDEX])}';")
           pkey = pFECR02(key01)
           setText(fecr01,P1[SINDEX]   ,$Adr.CID)
@@ -262,12 +263,10 @@ proc pFECR02(key : TKey) : (TKey) =
   setText(fecr02,P2[TELCIE],    Adr.TELCIE)
 
 
-  printPanel(fecr02)
-  displayPanel(fecr02)
-
   #Exemple ------
 
   while true:
+    poster(fecr02)
     var key02 = ioPanel(fecr02)
     case key02
       of TKey.PROC :  # for field Process

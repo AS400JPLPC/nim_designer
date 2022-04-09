@@ -102,20 +102,20 @@ callQuery["tcpays"] = tcpays
 #===================================================
 
 proc tcptt(fld : var FIELD ) =
-  var Cell_pos : int = 0
-  var Xcombo  = newGRID("tcptt",1,1,20,sepStyle)
+
+  var GSFL02  = newGRID("tcptt",3,2,20,sepStyle)
   var Cell_Code = defCell("Code",10,TEXT_FREE,"Cyan")
   var Cell_LCOMMUNE = defCell("Commune",20,TEXT_FREE,"Cyan")
   var Cell_Lpays = defCell("Pays",20,TEXT_FREE,"Cyan")
-  setHeaders(Xcombo, @[Cell_Code ,Cell_LCOMMUNE,Cell_Lpays])
+  setHeaders(GSFL02, @[Cell_Code ,Cell_LCOMMUNE,Cell_Lpays])
 
   clearDep()
   var columns: DbColumns
-  var req : string
+  var req : string =  fmt"SELECT CPOSTAL, LCOMMUNE, LPAYS FROM FCDEP WHERE CPAYS = '{getText(fecr02,P2[CPAYS])}' ORDER BY CPAYS,CPOSTAL;"
+  var idx : int
 
-
-  proc selectCommune() =
-    resetRows(Xcombo)
+  proc selectCommune(req : string) =
+    resetRows(GSFL02)
     for rown in dbtb.instantRows(columns,sql $req):
       for x in 0..(rown.len - 1) :
         case columns[x].name
@@ -123,38 +123,30 @@ proc tcptt(fld : var FIELD ) =
           of "LCOMMUNE"       :    Dep.LCOMMUNE     = rown[x]
           of "LPAYS"          :    Dep.LPAYS        = rown[x]
           else: discard
-      addRows(Xcombo, @[  Dep.CPOSTAL ,Dep.LCOMMUNE , Dep.LPAYS ])
+      addRows(GSFL02, @[  Dep.CPOSTAL ,Dep.LCOMMUNE , Dep.LPAYS ])
       clearDep()
 
+  dscfecr03()
+  selectCommune(req)
+  if countRows(GSFL02) > 0 and getText(fecr02,P2[VILLE]) > "" :
+    if getIndexG(GSFL02,getText(fecr02,P2[VILLE]),1) > 0 :
+      idx = getIndexG(GSFL02,getText(fecr02,P2[VILLE]),1)
 
 
   while true :
-    let (keys, val) = ioGrid(Xcombo,Cell_pos)
+    poster(fecr03)
+
+    let (keys, val) = ioFMT(fecr03,GSFL02,true,idx)
     case keys
-      of TKey.Enter :
-        restorePanel(fecr02,Xcombo)
+      of TKey.Mouse :
         fld.text  = $val[0]
         setText(fecr02,P2[VILLE]     ,$val[1])
-        printField(fecr02,fecr02.field[P2[VILLE]])
-        displayField(fecr02,fecr02.field[P2[VILLE]])
+        restorePanel(fecr02,fecr03)
         break
-      of TKey.Escape :
-        dscfecr03()
-        printPanel(fecr03)
-        displayPanel(fecr03)
-        while true :
-          var  key00 = ioPanel(fecr03)
-          case key00:
-          of TKey.F2 :
+      of TKey.F7 :
             req = fmt"SELECT CPOSTAL, LCOMMUNE, LPAYS FROM FCDEP WHERE CPAYS = '{getText(fecr02,P2[CPAYS])}' AND LCOMMUNE LIKE '%{getText(fecr03,P3[VILLE2])}%'ORDER BY CPAYS,CPOSTAL;"
-            selectCommune()
-          of TKey.F12 :
-            req = fmt"SELECT CPOSTAL, LCOMMUNE, LPAYS FROM FCDEP WHERE CPAYS = '{getText(fecr02,P2[CPAYS])}' ORDER BY CPAYS,CPOSTAL;"
-            selectCommune()
-          else : discard
-          if key00 == TKey.F2 or key00 == TKey.F12 :
-            restorePanel(fecr02,fecr03)
-            break
+            selectCommune(req)
+            idx = -1
       else: discard
 
 callQuery["tcptt"] = tcptt
