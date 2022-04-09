@@ -12,14 +12,20 @@
       "title": "CONTACT",
       "button": [
         {
-          "Tkey": "F2",
-          "txtKey": "F2",
+          "Tkey": "F3",
+          "txtKey": "F3",
           "ctrl": false,
           "actif": true
         },
         {
-          "Tkey": "F3",
-          "txtKey": "F3",
+          "Tkey": "F5",
+          "txtKey": "F5",
+          "ctrl": false,
+          "actif": true
+        },
+        {
+          "Tkey": "F7",
+          "txtKey": "F7",
           "ctrl": false,
           "actif": true
         },
@@ -45,24 +51,10 @@
       "label": [
         {
           "defLabel": "label",
-          "name": "L02002",
-          "posx": 2,
-          "posy": 2,
-          "text": "......"
-        },
-        {
-          "defLabel": "label",
           "name": "L02070",
           "posx": 2,
           "posy": 70,
           "text": "Nom.:"
-        },
-        {
-          "defLabel": "label",
-          "name": "L02108",
-          "posx": 2,
-          "posy": 108,
-          "text": "Trie.:"
         }
       ],
       "field": [
@@ -80,21 +72,6 @@
           "EdtCar": "",
           "Protect": false,
           "Process": ""
-        },
-        {
-          "defFld": "defString",
-          "name": "SELECTION",
-          "posx": 2,
-          "posy": 114,
-          "reftype": "FPROC",
-          "width": 15,
-          "empty": true,
-          "errmsg": "Obligatoire",
-          "help": "Trier Par Nom/Famille/Amis/Profession",
-          "text": "",
-          "EdtCar": "",
-          "Protect": false,
-          "Process": "tselection"
         },
         {
           "defFld": "defNumeric",
@@ -656,15 +633,15 @@
       "name": "fecr03",
       "posx": 1,
       "posy": 1,
-      "height": 4,
+      "height": 24,
       "width": 80,
       "cadre": "line1",
       "title": "Commune",
       "button": [
         {
-          "Tkey": "F2",
-          "txtKey": "F2",
-          "ctrl": true,
+          "Tkey": "F7",
+          "txtKey": "F7",
+          "ctrl": false,
           "actif": true
         },
         {
@@ -854,9 +831,9 @@
       "name": "tcptt",
       "panel": "fecr02",
       "form": "combo",
-      "posx": 17,
-      "posy": 11,
-      "nrow": 14,
+      "posx": 3,
+      "posy": 15,
+      "nrow": 20,
       "sep": "sepStyle",
       "cell": [
         {
