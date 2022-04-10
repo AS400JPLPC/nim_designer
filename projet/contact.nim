@@ -226,18 +226,17 @@ main()
 proc pFECR02(key : TKey) : (TKey) =
   dscfecr02()
 
-  if key == Tkey.F9 :
-    setActif(fecr02.button[P2B[B2F10]],false)  # upd enrg
-    setActif(fecr02.button[P2B[B2F23]],false)  # del enrg
+  case key
+    of Tkey.F9 :
+      setActif(fecr02.button[P2B[B2F9]],true)   # add enrg
 
-  if key == Tkey.F10 :
-    setActif(fecr02.button[P2B[B2F9]],false)   # add enrg
-    setActif(fecr02.button[P2B[B2F23]],false)  # del enrg
+    of Tkey.F10 :
+      setActif(fecr02.button[P2B[B2F10]],true)    # upd enrg
 
-  if key == Tkey.F23 :
-    setActif(fecr02.button[P2B[B2F9]],false)   # add enrg
-    setActif(fecr02.button[P2B[B2F10]],false)  # upd enrg
 
+    of Tkey.F23 :
+      setActif(fecr02.button[P2B[B2F23]],true)  # dlt enrg
+    else: discard
 
   setText(fecr02,P2[CID],       $Adr.CID)
   setText(fecr02,P2[NOM],       Adr.NOM)
@@ -353,5 +352,4 @@ proc pFECR02(key : TKey) : (TKey) =
 
       else: discard
 
-    if TKey.F3 == key02 or TKey.F9 == key02 or TKey.F10 == key02 or TKey.F12 == key02 or TKey.F23 == key02:
-      return key02
+    if TKey.F4 != key02 :  return key02

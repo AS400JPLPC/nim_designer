@@ -49,7 +49,7 @@ var fecr02= new(PANEL)
 
 # description
 proc dscfecr02() =
-  fecr02 = newPanel("fecr02",1,1,32,132,@[defButton(TKey.F3,"EXIT",false,true), defButton(TKey.F4,"Tbl-Profesion",false,true), defButton(TKey.F9,"Add",true,true), defButton(TKey.F10,"Update",true,true), defButton(TKey.F12,"Return",false,true), defButton(TKey.F23,"Delete",false,true)],line1,"Saisie CONTACT")
+  fecr02 = newPanel("fecr02",1,1,32,132,@[defButton(TKey.F3,"EXIT",false,true), defButton(TKey.F4,"Tbl-Profesion",false,true), defButton(TKey.F9,"Add",true,false), defButton(TKey.F10,"Update",true,false), defButton(TKey.F12,"Return",false,true), defButton(TKey.F23,"Delete",false,false)],line1,"Saisie CONTACT")
 
   # LABEL  -> fecr02
 
